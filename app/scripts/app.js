@@ -1,6 +1,6 @@
 'use strict';
 /**
- * Helper function to set activate navbar tabs
+ * Helper function to set 'activate' class on navbar tabs
  */
 function SetNavbarTab($scope, $location) {
   $scope.isActive = function (viewLocation) { 
