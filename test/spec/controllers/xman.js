@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: AboutCtrl', function () {
+describe('Controller: XmanCtrl', function () {
 
   // load the controller's module
   beforeEach(module('crnaClientApp'));
 
-  var AboutCtrl,
+  var XmanCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    AboutCtrl = $controller('AboutCtrl', {
+    XmanCtrl = $controller('XmanCtrl', {
       $scope: scope
     });
   }));
