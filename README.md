@@ -7,6 +7,8 @@ version 0.11.1.
 
 Run `grunt` for building and `grunt serve` for preview.
 
+Note : requiert "Compass" pour fonctionner : gem update --system && gem install compass
+
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
