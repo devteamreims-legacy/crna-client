@@ -5,10 +5,12 @@ version 0.11.1.
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+Lancer `grunt` pour la compilation et `grunt serve` pour une preview.
 
 Note : requiert "Compass" pour fonctionner : gem update --system && gem install compass
 
 ## Testing
 
-Running `grunt test` will run the unit tests with karma.
+Lancer `grunt test` pour executer les unit tests avec karma.
+
+
