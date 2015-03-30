@@ -31,13 +31,14 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/" ng-controller="SecteurCtrl">{{ secteur || 'X' }}</a>
+            <a class="navbar-brand" href="#/" ng-controller="SectorCtrl" my-sector></a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="NavbarCtrl">
             <ul class="nav navbar-nav">
               <li ng-class="{ active: isActive('/xman')}"><a ng-href="#/xman">XMAN</a></li>
               <li ng-class="{ active: isActive('/arcid')}"><a ng-href="#/arcid">ARCID</a></li>
+              <li ng-class="{ active: isActive('/ctlroom')}"><a ng-href="#/ctlroom">SALLE</a></li>
             </ul>
           </div>
         </div>
@@ -77,8 +78,12 @@
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/xman.js"></script>
     <script src="scripts/controllers/arcid.js"></script>
-    <script src="scripts/controllers/secteur.js"></script>
     <!-- endbuild -->
 
+    <script src="scripts/sectors/sectorController.js"></script>
+    <script src="scripts/sectors/sectorServices.js"></script>
+    <script src="scripts/sectors/sectorFilters.js"></script>
+
+    <script src="scripts/controllers/common.js"></script>
 </body>
 </html>

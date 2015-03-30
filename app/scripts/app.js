@@ -1,15 +1,5 @@
 'use strict';
 /**
- * Helper function to set 'activate' class on navbar tabs
- */
-function SetNavbarTab($scope, $location) {
-  $scope.isActive = function (viewLocation) { 
-    return viewLocation === $location.path();
-  };
-}
-
-
-/**
  * @ngdoc overview
  * @name crnaClientApp
  * @description
@@ -25,25 +15,30 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'btford.socket-io',
+    'sector', // Secteurs
+    'commonControllers' // Controllers communs
 ])
 .config(function ($routeProvider) {
     $routeProvider
     .when('/', {
-templateUrl: 'views/main.html',
-controller: 'MainCtrl'
-})
-    .when('/xman', {
-templateUrl: 'views/xman.html',
-controller: 'XmanCtrl'
-})
-    .when('/arcid', {
-templateUrl: 'views/arcid.html',
-controller: 'ArcidCtrl'
-})
-    .otherwise({
-redirectTo: '/'
-});
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl'
     })
-.controller('NavbarCtrl', ['$scope', '$location', SetNavbarTab]);
-
+    .when('/xman', {
+      templateUrl: 'views/xman.html',
+      controller: 'XmanCtrl'
+    })
+    .when('/arcid', {
+      templateUrl: 'views/arcid.html',
+      controller: 'ArcidCtrl'
+    })
+    .when('/ctlroom', {
+      templateUrl: 'views/ctlroom.html',
+      controller: 'SectorCtrl'
+    })
+    .otherwise({
+      redirectTo: '/'
+    });
+});
