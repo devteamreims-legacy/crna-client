@@ -20,7 +20,7 @@ angular
     'sector', // Secteurs
     'commonControllers' // Controllers communs
 ])
-.config(function ($routeProvider) {
+.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
     .when('/', {
       templateUrl: 'views/main.html',
@@ -41,4 +41,4 @@ angular
     .otherwise({
       redirectTo: '/'
     });
-});
+}]);
