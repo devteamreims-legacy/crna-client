@@ -9,6 +9,6 @@
  */
 
 angular.module('sectorServices', ['mainWebSocket'])
-.service('MySectors', ['socket', function(socketSecteur) {
+.service('MySectors', ['socket', function(socket) {
   this.mySectors = ['UR', 'XR', 'KR', 'HR'];
 }]);
