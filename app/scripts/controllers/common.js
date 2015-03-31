@@ -20,10 +20,5 @@ function SetNavbarTab($scope, $location) {
  */
 angular.module('commonControllers', [])
 .controller('MainCtrl', function ($scope) {
-  $scope.awesomeThings = [
-    'HTML5 Boilerplate',
-    'AngularJS',
-    'Karma'
-  ];
 })
 .controller('NavbarCtrl', ['$scope', '$location', SetNavbarTab]);
