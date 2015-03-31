@@ -8,6 +8,6 @@
  * Controller of the crnaClientApp
  */
 angular.module('position', ['positionServices', 'positionDirectives'])
-.controller('PositionController', ['$scope', 'MyPosition', function($scope, MyPosition) {
-  $scope.position = MyPosition.getPosition();  
+.controller('PositionController', ['$scope', 'myPosition', function($scope, myPosition) {
+  $scope.position = myPosition.myPosition;  
 }]);
