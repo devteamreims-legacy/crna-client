@@ -13,14 +13,15 @@ angular
     'ngCookies',
     'ngMessages',
     'ngResource',
-    'ngRoute',
     'ngSanitize',
     'ngTouch',
     'btford.socket-io',
+    'crnaRoutes', // Angular-ui-router routes
     'position', // Position module
     'sector', // Secteurs
     'commonControllers' // Controllers communs
 ])
+/*
 .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
     .when('/', {
@@ -42,4 +43,4 @@ angular
     .otherwise({
       redirectTo: '/'
     });
-}]);
+}])*/;

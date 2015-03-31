@@ -19,6 +19,6 @@ function SetNavbarTab($scope, $location) {
  * Controller of the crnaClientApp
  */
 angular.module('commonControllers', [])
-.controller('MainCtrl', function ($scope) {
+.controller('mainController', function ($scope) {
 })
-.controller('NavbarCtrl', ['$scope', '$location', SetNavbarTab]);
+.controller('navBarController', ['$scope', '$location', SetNavbarTab]);

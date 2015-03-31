@@ -8,7 +8,7 @@
  * Controller of the crnaClientApp
  */
 angular.module('crnaClientApp')
-  .controller('XmanCtrl', function ($scope) {
+  .controller('xmanController', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

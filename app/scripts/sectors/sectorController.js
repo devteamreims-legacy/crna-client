@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name crnaClientApp.controller:SecteurCtrl
+ * @name crnaClientApp.controller:sectorController
  * @description
- * # SecteurCtrl
+ * # sectorController
  * Controller of the crnaClientApp
  */
 angular.module('sector', ['sectorServices', 'sectorFilters'])
-.controller('SectorCtrl', ['$scope', 'MySectors', function ($scope, MySectors) {
+.controller('sectorController', ['$scope', 'MySectors', function ($scope, MySectors) {
   $scope.mySectors = MySectors.mySectors;
 }])
 .directive('mySector', function() {

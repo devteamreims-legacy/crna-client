@@ -31,15 +31,15 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/" ng-controller="SectorCtrl" my-sector></a>
+            <a class="navbar-brand" ui-sref='root' ng-controller="sectorController" my-sector></a>
             <span class="navbar-brand" crna-my-position></span>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="NavbarCtrl">
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="navBarController">
             <ul class="nav navbar-nav">
-              <li ng-class="{ active: isActive('/xman')}"><a ng-href="#/xman">XMAN</a></li>
-              <li ng-class="{ active: isActive('/arcid')}"><a ng-href="#/arcid">ARCID</a></li>
-              <li ng-class="{ active: isActive('/ctlroom')}"><a ng-href="#/ctlroom">SALLE</a></li>
+              <li ng-class="{ active: isActive('/xman')}"><a ui-sref='xman'>XMAN</a></li>
+              <li ng-class="{ active: isActive('/arcid')}"><a ui-sref='arcid'>ARCID</a></li>
+              <li ng-class="{ active: isActive('/ctlroom')}"><a ui-sref="ctlroom">SALLE</a></li>
             </ul>
           </div>
         </div>
@@ -47,7 +47,7 @@
     </div>
 
     <div class="container">
-      <div ng-view=""></div>
+      <div ui-view></div>
     </div>
 
     <div class="footer">
@@ -70,18 +70,19 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-socket-io/socket.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <script src="socket.io/socket.io.js"></script>
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/xman.js"></script>
     <script src="scripts/controllers/arcid.js"></script>
     <!-- endbuild -->
 
     <script src="scripts/io.js"></script>
+    <script src="scripts/routes.js"></script>
 
     <script src="scripts/sectors/sectorController.js"></script>
     <script src="scripts/sectors/sectorServices.js"></script>
