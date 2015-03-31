@@ -17,6 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'btford.socket-io',
+    'position', // Position module
     'sector', // Secteurs
     'commonControllers' // Controllers communs
 ])
