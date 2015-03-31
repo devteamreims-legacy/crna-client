@@ -14,5 +14,5 @@ angular.module('sectorFilters', [])
       return 'X';
     }
     return input.join('');
-  }
+  };
 });
