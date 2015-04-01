@@ -31,7 +31,7 @@ angular.module('positionServices', [
     if(vm.myPosition.name === undefined || vm.myPosition.name === '') { // We don't have a position, we can't answer the backend yet
       return;
     }
-    remotePosition.registerPosition(myPosition);
+    socketPosition.registerPosition(myPosition);
   });
 
   
@@ -43,7 +43,7 @@ angular.module('positionServices', [
     // Set local variable
     vm.myPosition = data;
     // Register to the backend
-    remotePosition.registerPosition(vm.myPosition);
+    socketPosition.registerPosition(vm.myPosition);
     // Set the cookie
     cookiePosition.positionToCookie(vm.myPosition);
   }
