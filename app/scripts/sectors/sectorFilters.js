@@ -8,7 +8,7 @@
  * Transforms a sector array ( ['UR', 'XR'] ) into a commonly readable string ( 'UXR' )
  **/
 angular.module('sectorFilters', [])
-.filter('toString', function() {
+.filter('sectorsToString', function() {
   return function(input) {
     if(input.length === 0) {
       return 'X';

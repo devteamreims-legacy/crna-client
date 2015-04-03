@@ -13,7 +13,7 @@ angular.module('sectorDirectives', [])
     restrict: 'EA',
     controller: 'SectorController', // Link to Sector Controller
     controllerAs: 's',
-    template: '<span ng-bind="s.mySectors | toString"></span>' // Use toString filter to reduce sector array to a readable string
+    template: '<span ng-bind="s.mySectors | sectorsToString"></span>' // Use toString filter to reduce sector array to a readable string
   };
 });
 
