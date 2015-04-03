@@ -13,6 +13,6 @@ angular.module('xmanDirectives', [])
     restrict: 'EA',
     controller: 'XmanController', // Link to Position Controller
     controllerAs: 'x',
-    template: '<span ng-repeat="flight in x.xmanData track by flight.flightId">{{ flight.flightId }}</span>'
+    templateUrl: 'views/xman/_xmanFlightList.html'
   };
 });
