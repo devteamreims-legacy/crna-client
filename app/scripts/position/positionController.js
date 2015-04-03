@@ -9,5 +9,6 @@
  */
 angular.module('position', ['positionServices', 'positionDirectives'])
 .controller('PositionController', ['$scope', 'myPosition', function($scope, myPosition) {
-  $scope.position = myPosition.myPosition;  
+  var vm = this;
+  vm.myPosition = myPosition.myPosition;
 }]);
