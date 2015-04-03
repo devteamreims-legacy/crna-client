@@ -20,7 +20,7 @@ angular.module('crnaRoutes', ['ui.router'])
     })
     .state('xman', {
       url: '/xman',
-      templateUrl: 'scripts/xman/views/xman.html',
+      templateUrl: '/views/xman/xman.html',
       controller: 'XmanController'
     })
     .state('ctlroom', {
