@@ -84,7 +84,7 @@ describe('Services: myPosition', function () {
   }));
 
   it('should load cookie when constructed', function() {
-    expect(myPosition.myPosition).toBe(position);
+    expect(myPosition.myPosition).toEqual(position);
   });
 
 });
