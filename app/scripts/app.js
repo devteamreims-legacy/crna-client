@@ -19,5 +19,6 @@ angular
     'crnaRoutes', // Angular-ui-router routes
     'position', // Position module
     'sector', // Secteurs
+    'xman', // Xman
     'commonControllers' // Controllers communs
 ]);
