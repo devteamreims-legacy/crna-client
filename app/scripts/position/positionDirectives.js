@@ -7,13 +7,12 @@
  * # positionDirective
  * Directives to manage our position
  **/
-angular.module('positionDirectives', ['positionServices'])
-.directive('crnaMyPosition', ['myPosition', function(scope, element, myPosition) {
+angular.module('positionDirectives', [])
+.directive('crnaMyPosition', function() {
   return {
     restrict: 'EA',
     controller: 'PositionController', // Link to Position Controller
     controllerAs: 'p',
     template: '<span ng-bind="p.myPosition.name"></span>'
   };
-}]);
-
+});
