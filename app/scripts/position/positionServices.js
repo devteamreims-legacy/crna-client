@@ -71,10 +71,11 @@ angular.module('positionServices', [
   function positionFromCookie() { // Load position from cookie
     $log.debug('Getting position cookie');
     var c = $cookieStore.get(cookieStr);
-    if(c === undefined || c.name === undefined)
+    if(c === undefined || c.name === undefined) {
       return {name: 0};
-    else
+    } else {
       return c;
+    }
   }
 
   return {
