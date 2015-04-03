@@ -26,7 +26,7 @@ angular.module('crnaRoutes', ['ui.router'])
     .state('ctlroom', {
       url: '/ctlroom',
       templateUrl: 'views/ctlroom.html',
-      controller: 'sectorController'
+      controller: 'SectorController'
     })
     .state('arcid', {
       url: '/arcid',

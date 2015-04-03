@@ -7,12 +7,8 @@
  * # sectorController
  * Controller of the crnaClientApp
  */
-angular.module('sector', ['sectorServices', 'sectorFilters'])
-.controller('sectorController', ['$scope', 'MySectors', function ($scope, MySectors) {
-  $scope.mySectors = MySectors.mySectors;
-}])
-.directive('mySector', function() {
-  return {
-    template: '{{mySectors | toString}}' 
-  };
-});
+angular.module('sector', ['sectorServices', 'sectorFilters', 'sectorDirectives'])
+.controller('SectorController', ['$scope', 'mySectors', function ($scope, mySectors) {
+  var vm = this;
+  vm.mySectors = mySectors.mySectors;
+}]);
