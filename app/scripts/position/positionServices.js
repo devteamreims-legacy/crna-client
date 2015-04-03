@@ -46,7 +46,7 @@ angular.module('positionServices', [
     // Thus, ending in not updating the view and losing two way syncing
     myPosition.name = data.name;
     // Register to the backend
-    socketPosition.registerPosition(vm.myPosition);
+    socketPosition.registerPosition(myPosition);
     // Set the cookie
     cookiePosition.positionToCookie(myPosition);
   }
