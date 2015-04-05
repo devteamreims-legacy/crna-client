@@ -67,4 +67,8 @@ angular.module('crnaConstants', [])
       speed: -4
     }
   }
+])
+.constant('xmanDefaultSpeeds', [
+  'mcs', // Minimum clean speed
+  '-4', '-3', '-2', '-1', '0'
 ]);

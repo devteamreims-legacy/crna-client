@@ -7,7 +7,7 @@
  * # xmanDirectives
  * Directives for xman
  **/
-angular.module('xmanDirectives', ['smart-table'])
+angular.module('xmanDirectives', ['crnaConstants', 'smart-table'])
 // Xman flight list directive
 .directive('xmanFlightList', function() {
   return {
@@ -28,12 +28,15 @@ angular.module('xmanDirectives', ['smart-table'])
   };
 })
 // Button to show and apply speed reduction
-.directive('xmanSpeed', function() {
+.directive('xmanSpeed', ['xmanDefaultSpeeds', function(xmanDefaultSpeeds) {
   return {
     restrict: 'E',
     scope: {
       flight: '='
     },
-    templateUrl: 'views/xman/_xmanSpeed.html'
+    templateUrl: 'views/xman/_xmanSpeed.html',
+    link: function(scope, element, attrs) {
+      scope.xmanDefaultSpeeds = xmanDefaultSpeeds;
+    }
   };
-});
+}]);
