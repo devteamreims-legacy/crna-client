@@ -1,1 +1,25 @@
-<div ng-repeat="flight in x.xmanData track by flight.flightId">{{ flight.flightId }}</div>
+<table st-table="x.xmanData" class="table">
+  <thead>
+  <tr>
+    <th>Flight ID</th>
+    <th>Callsign</th>
+    <th>Delay</th>
+    <th>Speed</th>
+    <th>Applied</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-class="(flight.applied.speed === undefined) ? 'warning' : 'success'" ng-repeat="flight in x.xmanData track by flight.flightId">
+    <td>{{flight.flightId}}</td>
+    <td>{{flight.callsign}}</td>
+    <td>{{flight.delay}}</td>
+    <td>{{flight.speed}}</td>
+    <td ng-if='flight.applied.speed === undefined'>
+      <xman-apply applied="flight.applied" flight-id="flight.flightId" />
+    </td>
+    <td ng-if='flight.applied.speed !== undefined'>
+      <xman-applied-by applied="flight.applied" flight-id="flight.flightId" />
+    </td>
+  </tr>
+  </tbody>
+</table>
