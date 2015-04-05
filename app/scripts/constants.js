@@ -38,7 +38,7 @@ angular.module('crnaConstants', [])
     // http://google-styleguide.googlecode.com/svn/trunk/jsoncstyleguide.xml?showone=Property_Name_Format#Property_Name_Format
   {
     flightId: 1234,
-    callSign: 'BAW63G',
+    callsign: 'BAW63G',
     delay: 19,
     speed: -3,
     applied: {
@@ -50,20 +50,20 @@ angular.module('crnaConstants', [])
   },
   {
     flightId: 1235,
-    callSign: 'BAW677',
+    callsign: 'BAW677',
     delay: 21,
     speed: -4,
-    applied: { }
+    applied: {}
   },
   { 
     flightId: 1236,
-    callSign: 'EZS1023',
+    callsign: 'EZS1023',
     delay: 10,
     speed: -4,
     applied: {
       position: 14,
       when: Date.now - 1000*60*4, // 4 minutes ago
-      spectors: ['UF', 'KF', 'KD'],
+      sectors: ['UF', 'KF', 'KD'],
       speed: -4
     }
   }
