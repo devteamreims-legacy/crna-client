@@ -66,6 +66,18 @@ angular.module('crnaConstants', [])
       sectors: ['UF', 'KF', 'KD'],
       speed: 0
     }
+  },
+  {
+    flightId: 1237,
+    callsign: 'UAE77',
+    delay: 35,
+    speed: -4,
+    applied: {
+      position: 14,
+      when: Date.now() - 1000*60*8,
+      sectors: ['UF', 'KF'],
+      speed: -4
+    }
   }
 ])
 .constant('xmanDefaultSpeeds', [
