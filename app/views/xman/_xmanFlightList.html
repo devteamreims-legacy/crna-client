@@ -15,10 +15,10 @@
     <td>{{flight.delay}}</td>
     <td>{{flight.speed}}</td>
     <td ng-if='flight.applied.speed === undefined'>
-      <xman-apply applied="flight.applied" flight-id="flight.flightId" />
+      <xman-apply flight="flight" />
     </td>
     <td ng-if='flight.applied.speed !== undefined'>
-      <xman-applied-by applied="flight.applied" flight-id="flight.flightId" />
+      <xman-applied-by flight="flight" />
     </td>
   </tr>
   </tbody>

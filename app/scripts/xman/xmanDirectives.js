@@ -22,8 +22,7 @@ angular.module('xmanDirectives', ['smart-table'])
   return {
     restrict: 'E',
     scope: {
-      flightId: '=',
-      applied: '='
+      flight: '='
     },
     templateUrl: 'views/xman/_xmanAppliedBy.html'
   };
@@ -32,8 +31,7 @@ angular.module('xmanDirectives', ['smart-table'])
   return {
     restrict: 'E',
     scope: {
-      flightId: '=',
-      applied: '='
+      flight: '='
     },
     templateUrl: 'views/xman/_xmanApply.html'
   };
