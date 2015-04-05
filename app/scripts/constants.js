@@ -64,11 +64,11 @@ angular.module('crnaConstants', [])
       position: 14,
       when: Date.now - 1000*60*4, // 4 minutes ago
       sectors: ['UF', 'KF', 'KD'],
-      speed: -4
+      speed: 0
     }
   }
 ])
 .constant('xmanDefaultSpeeds', [
   'mcs', // Minimum clean speed
-  '-4', '-3', '-2', '-1', '0'
+  -4, -3, -2, -1, 0
 ]);

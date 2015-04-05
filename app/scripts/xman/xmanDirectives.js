@@ -35,8 +35,9 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table'])
       flight: '='
     },
     templateUrl: 'views/xman/_xmanSpeed.html',
-    link: function(scope, element, attrs) {
-      scope.xmanDefaultSpeeds = xmanDefaultSpeeds;
+    controllerAs: 'xm',
+    controller: function($scope, xmanDefaultSpeeds) {
+      $scope.xmanDefaultSpeeds = xmanDefaultSpeeds; // Pass default speeds to our scope
     }
   };
 }]);

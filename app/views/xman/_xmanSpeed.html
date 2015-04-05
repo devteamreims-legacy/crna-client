@@ -1,6 +1,6 @@
-<div class="btn-group" role="group">
-  <button type="button" class="btn btn-default">{{flight.speed}}</button>
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-    <span class="caret"></span>
-  </button>
+<div style="white-space: nowrap;" role="group" ng-mouseleave="showExtended = false" ng-init="showExtended=0" >
+  <button type="button" class="btn btn-default" ng-mouseenter="showExtended = true">{{flight.speed}}</button>
+  <div class="btn-group" ng-show="showExtended">
+    <button style="float: none;display: inline-block;" type="button" class="btn btn-default" ng-repeat="s in xmanDefaultSpeeds">{{s}}</button>
+  </div>
 </div>
