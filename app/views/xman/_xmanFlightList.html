@@ -13,11 +13,10 @@
     <td>{{flight.flightId}}</td>
     <td>{{flight.callsign}}</td>
     <td>{{flight.delay}}</td>
-    <td>{{flight.speed}}</td>
-    <td ng-if='flight.applied.speed === undefined'>
-      <xman-apply flight="flight" />
+    <td>
+      <xman-speed flight="flight" />
     </td>
-    <td ng-if='flight.applied.speed !== undefined'>
+    <td>
       <xman-applied-by flight="flight" />
     </td>
   </tr>

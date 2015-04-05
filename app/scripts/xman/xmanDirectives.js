@@ -27,12 +27,13 @@ angular.module('xmanDirectives', ['smart-table'])
     templateUrl: 'views/xman/_xmanAppliedBy.html'
   };
 })
-.directive('xmanApply', function() {
+// Button to show and apply speed reduction
+.directive('xmanSpeed', function() {
   return {
     restrict: 'E',
     scope: {
       flight: '='
     },
-    templateUrl: 'views/xman/_xmanApply.html'
+    templateUrl: 'views/xman/_xmanSpeed.html'
   };
 });
