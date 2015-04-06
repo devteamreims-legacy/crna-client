@@ -64,7 +64,7 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
         }
 
         return def;
-      }
+      };
     }
   };
 }]);
