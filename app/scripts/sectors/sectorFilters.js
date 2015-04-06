@@ -7,12 +7,13 @@
  * # sectorFilters
  * Transforms a sector array ( ['UR', 'XR'] ) into a commonly readable string ( 'UXR' )
  **/
-angular.module('sectorFilters', [])
-.filter('sectorsToString', function() {
+angular.module('sectorFilters', ['crnaConstants', 'underscore', 'sectorServices'])
+.filter('sectorsToString', ['allSectors', '_', function(allSectors, _) {
   return function(input) {
     if(input === undefined || input.length === 0) {
       return 'X';
     }
-    return input.join('');
+
+    return allSectors.reduceSector(input).join('');
   };
-});
+}]);
