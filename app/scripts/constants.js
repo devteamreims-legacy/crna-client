@@ -81,6 +81,6 @@ angular.module('crnaConstants', [])
   }
 ])
 .constant('xmanDefaultSpeeds', [
-  'mcs', // Minimum clean speed
+  'MCS', // Minimum clean speed
   '-4', '-3', '-2', '-1', '0'
-]);
+].reverse()); // Order with in decreasing order
