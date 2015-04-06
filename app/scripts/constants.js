@@ -25,7 +25,8 @@ angular.module('crnaConstants', [])
     { name: 'UBN',    children: ['UN', 'UB'] },
     { name: 'UBKN',   children: ['UBN', 'KN'] },
     { name: 'KHN',    children: ['KN', 'HN'] },
-    { name: '4N',     children: ['UB', 'UN', 'KN', 'HN'] }
+    { name: '4N',     children: ['UB', 'UN', 'KN', 'HN'] },
+    { name: 'URMN',   children: ['5R', '4N'] }
 ])
 .constant('crnaPositions', [
     '30', '31', '32', '33', // 4R
