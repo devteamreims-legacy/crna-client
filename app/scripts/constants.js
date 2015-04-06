@@ -40,47 +40,47 @@ angular.module('crnaConstants', [])
     flightId: 1234,
     callsign: 'BAW63G',
     delay: 19,
-    speed: -3,
+    speed: '-3',
     applied: {
       position: 12,
       when: Date.now() - 1000*60*10, // 10 minutes ago
       sectors: ['UR', 'XR'],
-      speed: -2
+      speed: '-2'
     }
   },
   {
     flightId: 1235,
     callsign: 'BAW677',
     delay: 21,
-    speed: -4,
+    speed: '-4',
     applied: {}
   },
   { 
     flightId: 1236,
     callsign: 'EZS1023',
     delay: 10,
-    speed: -4,
+    speed: '-4',
     applied: {
       position: 14,
       when: Date.now() - 1000*60*4, // 4 minutes ago
       sectors: ['UF', 'KF', 'KD'],
-      speed: 0
+      speed: '0'
     }
   },
   {
     flightId: 1237,
     callsign: 'UAE77',
     delay: 35,
-    speed: -4,
+    speed: '-4',
     applied: {
       position: 14,
       when: Date.now() - 1000*60*8,
       sectors: ['UF', 'KF'],
-      speed: -4
+      speed: '-4'
     }
   }
 ])
 .constant('xmanDefaultSpeeds', [
   'mcs', // Minimum clean speed
-  -4, -3, -2, -1, 0
+  '-4', '-3', '-2', '-1', '0'
 ]);
