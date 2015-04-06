@@ -10,7 +10,7 @@
 angular.module('sectorFilters', [])
 .filter('sectorsToString', function() {
   return function(input) {
-    if(input.length === 0) {
+    if(input === undefined || input.length === 0) {
       return 'X';
     }
     return input.join('');
