@@ -7,7 +7,7 @@
  * # xmanDirectives
  * Directives for xman
  **/
-angular.module('xmanDirectives', ['crnaConstants', 'smart-table'])
+angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment'])
 // Xman flight list directive
 .directive('xmanFlightList', function() {
   return {
