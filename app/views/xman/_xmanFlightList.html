@@ -1,7 +1,6 @@
 <table st-table="x.xmanData" class="table">
   <thead>
   <tr>
-    <th>ID</th>
     <th>Callsign</th>
     <th>Delay</th>
     <th>Speed</th>
@@ -10,7 +9,6 @@
   </thead>
   <tbody>
   <tr ng-class="(flight.applied.speed === undefined) ? 'warning' : 'success'" ng-repeat="flight in x.xmanData track by flight.flightId">
-    <td>{{flight.flightId}}</td>
     <td>{{flight.callsign}}</td>
     <td>{{flight.delay}}</td>
     <td>
