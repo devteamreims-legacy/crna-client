@@ -8,7 +8,7 @@
  * Controller of the crnaClientApp
  */
 angular.module('xman', ['crnaConstants', 'xmanDirectives'])
-.controller('XmanController', ['xmanStubData', function (xmanStubData, $scope) {
+.controller('XmanController', ['xmanStubData', function (xmanStubData) {
   var vm = this;
   vm.xmanData = xmanStubData;
 }]);
