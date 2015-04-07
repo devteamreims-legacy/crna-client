@@ -17,6 +17,28 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
     templateUrl: 'views/xman/_xmanFlightList.html'
   };
 })
+// Xman delay snippet
+.directive('xmanDelay', function() {
+  return {
+    restrict: 'E',
+    scope: {
+      flight: '='
+    },
+    controllerAs: 'xm_delay',
+    templateUrl: 'views/xman/_xmanDelay.html',
+    controller: ['$scope', function($scope) {
+      $scope.delayClass = function(flight) {
+        if(flight.delay >= 20) {
+          return 'text-danger';
+        } else if (flight.delay >= 10) {
+          return 'text-warning';
+        } else {
+          return 'text-success';
+        }
+      };
+    }]
+  };
+})
 // Xman applied by snippet
 .directive('xmanAppliedBy', function() {
   return {

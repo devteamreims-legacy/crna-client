@@ -10,7 +10,7 @@
   <tbody>
   <tr ng-class="(flight.applied.speed === undefined) ? 'danger' : 'success'" ng-repeat="flight in x.xmanData track by flight.flightId">
     <td><strong>{{flight.callsign}}</strong></td>
-    <td>{{flight.delay}}</td>
+    <td><xman-delay flight="flight" /></td>
     <td>
       <xman-speed flight="flight" />
     </td>
