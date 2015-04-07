@@ -92,6 +92,6 @@ angular.module('crnaConstants', [])
   'MCS', // Minimum clean speed
   '-4', '-3', '-2', '-1', '0'
 ].reverse()) // Order with in decreasing order
-.constant('arcidFlightLight', [
+.constant('arcidFlightList', [
   'AFR1018', 'NJE143G', 'BAW633', 'MAJOR', 'HOP542BG'
 ]);
