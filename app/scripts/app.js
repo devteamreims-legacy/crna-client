@@ -20,5 +20,6 @@ angular
     'position', // Position module
     'sector', // Secteurs
     'xman', // Xman
+    'arcid', // arcid
     'commonControllers' // Controllers communs
 ]);
