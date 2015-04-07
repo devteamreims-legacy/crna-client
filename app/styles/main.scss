@@ -2,11 +2,17 @@
 @import "variables";
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 
-@import "navbar";
-
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+
+// Import custom styling after bootstrap to override
+@import "navbar";
+@import "xman";
+
+html, body {
+  height: 100%;
+}
 
 body {
   /* Navbar fixed top overlaps content otherwise */
