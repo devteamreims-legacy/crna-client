@@ -2,4 +2,29 @@
 
 .xman-table > tbody > tr > td {
   vertical-align: middle;
+  // CSS Transitions
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.xman-table div.speed-buttons {
+  white-space: nowrap; // Bootstrap workaround for floating buttons in table
+  vertical-align: middle;
+}
+
+.xman-table div.speed-buttons > button {
+  float: none; // Bootstrap workaround for floating buttons in table
+  display: inline-block;
+}
+
+.xman-table div.speed-buttons > button.btn-success-remove, 
+.xman-table div.speed-buttons > button.btn-warning-remove,
+.xman-table div.speed-buttons > button.btn-success-add, 
+.xman-table div.speed-buttons > button.btn-warning-add {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
 }
