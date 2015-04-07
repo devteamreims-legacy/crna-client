@@ -11,6 +11,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // Import custom styling after bootstrap to override
 @import "navbar";
 @import "xman";
+@import "arcid";
 
 html, body {
   height: 100%;
