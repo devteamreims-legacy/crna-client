@@ -79,6 +79,13 @@ angular.module('crnaConstants', [])
       sectors: ['UF', 'KF'],
       speed: '-4'
     }
+  },
+  {
+    flightId: 1238,
+    callsign: 'EZY8989',
+    delay: 4,
+    speed: '0',
+    applied: {}
   }
 ])
 .constant('xmanDefaultSpeeds', [
