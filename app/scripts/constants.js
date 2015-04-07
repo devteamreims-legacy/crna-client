@@ -92,6 +92,15 @@ angular.module('crnaConstants', [])
   'MCS', // Minimum clean speed
   '-4', '-3', '-2', '-1', '0'
 ].reverse()) // Order with in decreasing order
+// Stub arcid flight list
 .constant('arcidFlightList', [
   'AFR1018', 'NJE143G', 'BAW633', 'MAJOR', 'HOP542BG'
+])
+// Stub arcid point profile
+.constant('arcidPointProfile', [
+  {name: 'BRY', when: Date.now() - 1000*60*4, level: 360},
+  {name: 'CLM', when: Date.now() - 1000*60*4 + 60*1000, level: 346},
+  {name: 'UTELA', when: Date.now() - 1000*60*4 + 180*1000, level: 340},
+  {name: 'KOPOR', when: Date.now() - 1000*60*4 + 240*1000, level: 340},
+  {name: 'SOMIL', when: Date.now() - 1000*60*4 + 360*1000, level: 340}
 ]);
