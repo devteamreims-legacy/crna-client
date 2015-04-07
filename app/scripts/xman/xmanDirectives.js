@@ -7,7 +7,7 @@
  * # xmanDirectives
  * Directives for xman
  **/
-angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment'])
+angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment', 'sectorServices', 'positionServices'])
 // Xman flight list directive
 .directive('xmanFlightList', function() {
   return {
@@ -36,11 +36,22 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
     },
     templateUrl: 'views/xman/_xmanSpeed.html',
     controllerAs: 'xm',
-    controller: ['$scope', 'xmanDefaultSpeeds', function($scope, xmanDefaultSpeeds) {
+    controller: ['$scope', 'xmanDefaultSpeeds', 'myPosition', 'mySectors', function($scope, xmanDefaultSpeeds, myPosition, mySectors) {
       $scope.xmanDefaultSpeeds = xmanDefaultSpeeds; // Pass default speeds to our scope
       
+      // TODO : Use a service/factory here
+      // Undo speed function
       $scope.undoSpeed = function(flight) {
         flight.applied = {};
+      };
+      // Set speed function
+      $scope.setSpeed = function(flight, s) {
+        flight.applied = {
+          position: myPosition.myPosition.name,
+          sectors: mySectors.mySectors.slice(),
+          speed: s,
+          when: Date.now()
+        };
       };
 
       /*
