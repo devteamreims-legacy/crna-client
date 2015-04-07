@@ -9,7 +9,7 @@
     <tr ng-repeat="pp in arcid.pointProfile">
       <td>{{pp.when | amDateFormat:'HH:mm:ss'}}</td>
       <td>{{pp.name}}</td>
-      <td>{{pp.level}}</td>
+      <td>{{pp.level}}{{pp.trend}}</td>
     </tr>
     </tbody>
     </table>
