@@ -70,7 +70,7 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
       $scope.setSpeed = function(flight, s) {
         flight.applied = {
           position: myPosition.myPosition.name,
-          sectors: mySectors.mySectors.slice(),
+          sectors: angular.copy(mySectors.mySectors),
           speed: s,
           when: Date.now()
         };

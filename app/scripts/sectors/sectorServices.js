@@ -19,7 +19,7 @@ angular.module('sectorServices', ['mainWebSocket', 'crnaConstants', 'underscore'
   };
 }])
 .factory('allSectors', ['crnaSectors', 'crnaAtomicSectors', '_', function(crnaSectors, crnaAtomicSectors, _) {
-  var allSectors = crnaSectors.slice(); // Initialize with non-expanded sectors
+  var allSectors = angular.copy(crnaSectors); // Initialize with non-expanded sectors
   /* TODO
    * Add logic here to pull a fully expanded sector list from the backend
    */
