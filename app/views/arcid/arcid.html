@@ -1,2 +1,27 @@
-<div id="arcid-left-panel" class="col-md-4 col-sm-4">Form here</div>
-<div id="arcid-right-panel" class="col-md-8 col-sm-8">Results here</div>
+  <div id="arcid-left-panel" class="col-md-3 col-sm-4">
+    <div class="form-group has-feedback">
+      <input type="text" class="form-control" placeHolder="Callsign" />
+      <i class="glyphicon glyphicon-search form-control-feedback"></i>
+    </div>
+    <div class="btn-group-vertical" style="width: 100%;" role="group">
+      <button class="btn btn-default" ng-repeat="callsign in arcid.flightList">{{callsign}}</button>
+    </div>
+  </div>
+  <div id="arcid-right-panel" class="col-md-9 col-sm-8">
+    <h3 style="margin-top: 0;">AFR1010</h3>
+    <hr style="margin-top: 5px; margin-bottom: 20px;" />
+    <table class="table table-striped table-hover table-condensed">
+      <thead>
+        <th>Time</th>
+        <th>Point</th>
+        <th>Level</th>
+      </thead>
+      <tbody>
+      <tr ng-repeat="pp in arcid.pointProfile">
+        <td>{{pp.when | amDateFormat:'HH:mm:ss'}}</td>
+        <td>{{pp.name}}</td>
+        <td>{{pp.level}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
