@@ -28,7 +28,7 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
   };
 })
 // Button to show and apply speed reduction
-.directive('xmanSpeed', ['xmanDefaultSpeeds', function(xmanDefaultSpeeds) {
+.directive('xmanSpeed', [function() {
   return {
     restrict: 'E',
     scope: {
@@ -36,7 +36,7 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
     },
     templateUrl: 'views/xman/_xmanSpeed.html',
     controllerAs: 'xm',
-    controller: function($scope, xmanDefaultSpeeds) {
+    controller: ['$scope', 'xmanDefaultSpeeds', function($scope, xmanDefaultSpeeds) {
       $scope.xmanDefaultSpeeds = xmanDefaultSpeeds; // Pass default speeds to our scope
       /*
        * Returns a css class given an xmanFlight and a buttonSpeed
@@ -65,6 +65,6 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
 
         return def;
       };
-    }
+    }]
   };
 }]);
