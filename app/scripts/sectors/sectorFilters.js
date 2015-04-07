@@ -11,7 +11,7 @@ angular.module('sectorFilters', ['crnaConstants', 'sectorServices'])
 .filter('sectorsToString', ['allSectors', function(allSectors) {
   return function(input) {
     if(input === undefined || input.length === 0) {
-      return 'X';
+      return '-';
     }
 
     return allSectors.reduceSector(input).join('');
