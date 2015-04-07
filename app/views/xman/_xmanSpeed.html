@@ -1,4 +1,4 @@
 <div style="white-space: nowrap;" class="btn-group" role="group" style="vertical-align: middle;">
-  <button style="float: none;display: inline-block;" type="button" ng-class="buttonClass(flight, s)" class="btn btn-sm btn-default" ng-repeat="s in xmanDefaultSpeeds">{{s}}</button><button style="float: none;display: inline-block;" type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove-circle"></span></button>
+  <button style="float: none;display: inline-block;" type="button" ng-class="buttonClass(flight, s)" class="btn btn-sm btn-default" ng-repeat="s in xmanDefaultSpeeds">{{s}}</button><button style="float: none;display: inline-block;" type="button" class="btn btn-danger btn-sm" ng-click="undoSpeed(flight)" ><span class="glyphicon glyphicon-remove-circle"></span></button>
   </div>
 </div>

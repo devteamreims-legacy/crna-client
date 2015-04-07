@@ -38,6 +38,11 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
     controllerAs: 'xm',
     controller: ['$scope', 'xmanDefaultSpeeds', function($scope, xmanDefaultSpeeds) {
       $scope.xmanDefaultSpeeds = xmanDefaultSpeeds; // Pass default speeds to our scope
+      
+      $scope.undoSpeed = function(flight) {
+        flight.applied = {};
+      };
+
       /*
        * Returns a css class given an xmanFlight and a buttonSpeed
        */
