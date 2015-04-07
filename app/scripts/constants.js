@@ -75,7 +75,7 @@ angular.module('crnaConstants', [])
     speed: '-4',
     applied: {
       position: 14,
-      when: Date.now() - 1000*60*8,
+      when: Date.now(),
       sectors: ['UF', 'KF'],
       speed: '-4'
     }
