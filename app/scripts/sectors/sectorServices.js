@@ -10,12 +10,12 @@
 
 angular.module('sectorServices', ['mainWebSocket', 'crnaConstants', 'underscore'])
 .factory('mySectors', ['allSectors', 'socket', function(allSectors, socket) {
-  var mySectors = function() {
-    return ['UR', 'XR', 'KR', 'HR'];
-  };
+  var mySectors = ['UR', 'XR'];
 
   return {
-    mySectors: mySectors
+    mySectors: mySectors,
+    allSectors: allSectors,
+    reduced: allSectors.reduceSector(mySectors)
   };
 }])
 .factory('allSectors', ['crnaSectors', 'crnaAtomicSectors', '_', function(crnaSectors, crnaAtomicSectors, _) {
