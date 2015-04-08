@@ -96,7 +96,8 @@ angular.module('crnaConstants', [])
 ].reverse()) // Order with in decreasing order
 // Stub arcid flight list
 .constant('arcidFlightList', [
-  'AFR1018', 'NJE143G', 'BAW633', 'MAJOR', 'HOP542BG'
+  'AFR1018', 'NJE143G', 'BAW633', 'MAJOR', 'HOP542BG', 'BAW555', 'AFR123G', 'MON5434', 'EZY1217', 'AZA212', 'BEL9B',
+  'RYR1918', 'BEL511', 'DLH324', 'DLH501', 'DLH506'
 ])
 // Stub arcid point profile
 .constant('arcidPointProfile', [
