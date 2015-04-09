@@ -21,7 +21,6 @@ module.exports = function(config) {
       // bower:js
       'bower_components/jquery/dist/jquery.js',
       'bower_components/angular/angular.js',
-      'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-cookies/angular-cookies.js',
       'bower_components/angular-messages/angular-messages.js',
@@ -35,6 +34,7 @@ module.exports = function(config) {
       'bower_components/moment/moment.js',
       'bower_components/angular-moment/angular-moment.js',
       'bower_components/underscore/underscore.js',
+      'bower_components/materialize/bin/materialize.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

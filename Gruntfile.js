@@ -179,7 +179,8 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath:  /\.\.\//,
+        exclude: [ 'bower_components/materialize/bin/materialize.css' ] // Already included in our main.scss
       },
       test: {
         devDependencies: true,
@@ -385,8 +386,8 @@ module.exports = function (grunt) {
           src: ['generated/*']
         }, {
           expand: true,
-          cwd: '.',
-          src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
+          cwd: '.tmp/font',
+          src: 'bower_components/materialize/font/{,*/}*.*',
           dest: '<%= yeoman.dist %>'
         }]
       },
