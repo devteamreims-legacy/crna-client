@@ -15,6 +15,10 @@
 @import "xman";
 @import "arcid";
 
+html {
+  font-size: 140%; // Global font-size, use CSS3 rem after
+}
+
 html, body {
   height: 100%;
 }
