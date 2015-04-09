@@ -24,9 +24,9 @@
         <div class="nav-wrapper">
           <a ui-sref='root' class="left brand-logo" crna-my-sectors></a>
           <ul>
-            <li ng-class="{ active: isActive('/xman')}" class="success"><a ui-sref='xman'>XMAN</a></li>
-            <li ng-class="{ active: isActive('/arcid')}" class="error"><a ui-sref='arcid'>ARCID</a></li>
-            <li ng-class="{ active: isActive('/ctlroom')}" class="warning"><a ui-sref='ctlroom'>SALLE</a></li>
+            <li ui-sref-active="active" class="success"><a ui-sref='xman'>XMAN</a></li>
+            <li ui-sref-active="active" class="error"><a ui-sref='arcid'>ARCID</a></li>
+            <li ui-sref-active="active" class="warning"><a ui-sref='ctlroom'>SALLE</a></li>
           </ul>
         </div>
       </nav>
