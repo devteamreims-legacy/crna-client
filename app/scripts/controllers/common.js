@@ -8,11 +8,13 @@
  * # MainCtrl
  * Controller of the crnaClientApp
  */
-angular.module('commonControllers', [])
-.controller('mainController', function ($scope) {
+angular.module('commonControllers', ['ui.bootstrap'])
+.controller('mainController', function () {
 })
-.controller('navBarController', ['$scope', '$state', function($scope, $state) {
+.controller('navBarController', ['$scope', '$state', '$modal', function($scope, $state, $modal) {
   $scope.showHelp = function() {
-    console.log('Help for state :', $state.current);
+    return $modal.open({
+      templateUrl: 'views/help/' + $state.current.name + 'Help.html'
+    });
   };
 }]);
