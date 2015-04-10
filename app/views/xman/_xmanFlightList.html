@@ -10,7 +10,7 @@
   <tbody>
   <tr ng-class="getRowClass(flight)" ng-repeat="flight in x.xmanData track by flight.flightId">
     <td class="col-md-3"><strong>{{flight.callsign}}</strong></td>
-    <td class="col-md-1"><xman-delay flight="flight" /></td>
+    <td class="col-md-1 text-center"><xman-delay flight="flight" /></td>
     <td class="col-md-5">
       <xman-speed flight="flight" />
     </td>
