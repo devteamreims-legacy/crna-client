@@ -46,6 +46,7 @@ angular.module('crnaConstants', [])
     speed: '-3',
     applied: {
       position: 12,
+      minCleanSpeed: true,
       when: Date.now() - 1000*60*10, // 10 minutes ago
       sectors: ['UR', 'XR'],
       speed: '-2'
@@ -65,6 +66,7 @@ angular.module('crnaConstants', [])
     speed: '-4',
     applied: {
       position: 14,
+      minCleanSpeed: false,
       when: Date.now() - 1000*60*4, // 4 minutes ago
       sectors: ['UF', 'KF', 'KD'],
       speed: '0'
@@ -77,6 +79,7 @@ angular.module('crnaConstants', [])
     speed: '-4',
     applied: {
       position: 14,
+      minCleanSpeed: false,
       when: Date.now(),
       sectors: ['UF', 'KF'],
       speed: '-4'
@@ -91,7 +94,6 @@ angular.module('crnaConstants', [])
   }
 ])
 .constant('xmanDefaultSpeeds', [
-  'MCS', // Minimum clean speed
   '-4', '-3', '-2', '-1', '0'
 ].reverse()) // Order with in decreasing order
 // Stub arcid flight list
