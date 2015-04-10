@@ -1,25 +1,36 @@
 /* Center vertical align xman table */
 
-
-.xman-table > tbody > tr.success > td,
-.xman-table > tbody > tr.danger > td 
-{
-//  vertical-align: middle;
-  // CSS Transitions
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+.xman-table > tbody > tr.success {
+  @extend .green.lighten-4;
+  @include transition(all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s);
 }
 
-.xman-table div.speed-buttons {
-  white-space: nowrap; // Bootstrap workaround for floating buttons in table
-  vertical-align: middle;
+.xman-table > tbody > tr.danger {
+  @extend .red.lighten-4;
+  @include transition(all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s);
 }
 
-.xman-table div.speed-buttons > button {
-  float: none; // Bootstrap workaround for floating buttons in table
-  display: inline-block;
+.xman-table div.speed-buttons > a {
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+}
+
+.xman-table div.speed-buttons > a {
+  @extend .white;
+  @extend .black-text;
+}
+
+.xman-table div.speed-buttons > a.proposed {
+  @extend .orange.lighten-1;
+}
+
+.xman-table div.speed-buttons > a.applied {
+  @extend .green.lighten-1;
+}
+
+.xman-table div.speed-buttons > a.delete {
+  @extend .red.lighten-1;
+  @extend .white-text;
 }
 
 .xman-table div.speed-buttons > button.btn-success-add, 
@@ -27,9 +38,5 @@
 .xman-table div.speed-buttons > button.btn-success-remove, 
 .xman-table div.speed-buttons > button.btn-warning-remove
 {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  @include transition(all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s);
 }
-
