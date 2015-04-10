@@ -108,7 +108,9 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
           return 'disabled'; // No xman on this flight, disable it
         }
 
-        ret = ((flight.applied.minCleanSpeed === true) ? 'btn-success' : '');
+        if(flight.applied.minCleanSpeed === true) {
+          ret = 'btn-success';
+        }
         return ret;
       };
 
