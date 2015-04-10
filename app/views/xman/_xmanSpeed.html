@@ -1,6 +1,6 @@
 <div class="speed-buttons btn-group" role="group">
-  <a class="btn btn-default btn-sm" ng-click="aircraftMinSpeed(flight)">
-    <i class="glyphicon glyphicon-plane"></i>
+  <a class="btn btn-default btn-sm" ng-class="(flight.applied.minCleanSpeed === true) ? 'btn-success' : ''" ng-click="toggleMcs(flight)">
+    MCS
   </a><a 
   ng-class="buttonClass(flight, s)" class="btn btn-sm btn-default" ng-repeat="s in xmanDefaultSpeeds" ng-click="setSpeed(flight, s)">{{s}}</a><a
   class="btn btn-default btn-sm" ng-class="(flight.speed === '0') ? 'disabled' : ''" ng-click="undoSpeed(flight)" >

@@ -7,16 +7,25 @@
  * # xmanDirectives
  * Directives for xman
  **/
-angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment', 'sectorServices', 'positionServices'])
+angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment', 'sectorServices', 'positionServices', 'underscore'])
 // Xman flight list directive
-.directive('xmanFlightList', function() {
+.directive('xmanFlightList', ['_', function(_) {
   return {
     restrict: 'EA',
     controller: 'XmanController', // Link to Position Controller
     controllerAs: 'x',
-    templateUrl: 'views/xman/_xmanFlightList.html'
+    templateUrl: 'views/xman/_xmanFlightList.html',
+    link: function(scope, element, attrs) {
+      scope.getRowClass = function(flight) {
+        var ret = 'success';
+        if(_.isEmpty(flight.applied) === true && flight.speed !== '0') {
+          ret = 'danger';
+        }
+        return ret;
+      };
+    }
   };
-})
+}])
 // Xman delay snippet
 .directive('xmanDelay', function() {
   return {
@@ -68,13 +77,30 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
       };
       // Set speed function
       $scope.setSpeed = function(flight, s) {
+        if(flight.applied.speed === s) {
+          return; // Don't update
+        }
         flight.applied = {
           position: myPosition.myPosition.name,
           sectors: angular.copy(mySectors.mySectors),
           speed: s,
+          minCleanSpeed: flight.applied.minCleanSpeed,
           when: Date.now()
         };
       };
+
+      // Click on "MCS" button
+      $scope.toggleMcs = function(flight) {
+        flight.applied = {
+          position: myPosition.myPosition.name,
+          sectors: angular.copy(mySectors.mySectors),
+          speed: flight.applied.speed,
+          minCleanSpeed: !flight.applied.minCleanSpeed,
+          when: Date.now()
+        };
+        return;
+      };
+
 
       /*
        * Returns a css class given an xmanFlight and a buttonSpeed
@@ -91,7 +117,7 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
             def = 'btn-warning'; // Requested speed will show as primary
           }
         } else { // We have an applied speed reduction
-          if (flight.speed === flight.applied.speed) { // Applied speed equals requested speed
+          if (flight.speed === flight.applied.speed) { // Applied speed equals requested speed 
             if (buttonSpeed === flight.applied.speed) { // All is good, disable input
               def = 'btn-success';
             }
