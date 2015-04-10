@@ -30,13 +30,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-
-          <a class="navbar-brand" ui-sref='root' crna-my-sectors></a>
-          <span class="navbar-brand" crna-my-position></span>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="navBarController">
           <ul class="nav navbar-nav">
+            <li ui-sref-active="active"><a ui-sref='root'><crna-my-sectors /></a></li>
             <li ui-sref-active="active"><a ui-sref='xman'>XMAN</a></li>
             <li ui-sref-active="active"><a ui-sref='arcid'>ARCID</a></li>
             <li ui-sref-active="active"><a ui-sref="ctlroom">SALLE</a></li>
