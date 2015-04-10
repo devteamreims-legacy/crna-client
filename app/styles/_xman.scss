@@ -17,15 +17,15 @@
   vertical-align: middle;
 }
 
-.xman-table div.speed-buttons > button {
+.xman-table div.speed-buttons > a {
   float: none; // Bootstrap workaround for floating buttons in table
   display: inline-block;
 }
 
-.xman-table div.speed-buttons > button.btn-success-add, 
-.xman-table div.speed-buttons > button.btn-warning-add,
-.xman-table div.speed-buttons > button.btn-success-remove, 
-.xman-table div.speed-buttons > button.btn-warning-remove
+.xman-table div.speed-buttons > a.btn-success-add, 
+.xman-table div.speed-buttons > a.btn-warning-add,
+.xman-table div.speed-buttons > a.btn-success-remove, 
+.xman-table div.speed-buttons > a.btn-warning-remove
 {
   -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
   -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;

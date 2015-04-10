@@ -1,4 +1,4 @@
 <div class="speed-buttons btn-group" role="group">
-  <button type="button" ng-class="buttonClass(flight, s)" class="btn btn-sm btn-default" ng-repeat="s in xmanDefaultSpeeds" ng-click="setSpeed(flight, s)">{{s}}</button><button type="button" class="btn btn-default btn-sm" ng-click="undoSpeed(flight)" ><span class="text-danger glyphicon glyphicon-remove"></span></button>
+  <a ng-class="buttonClass(flight, s)" class="btn btn-sm btn-default" ng-repeat="s in xmanDefaultSpeeds" ng-click="setSpeed(flight, s)">{{s}}</a><a class="btn btn-default btn-sm" ng-click="undoSpeed(flight)" ><i class="text-danger glyphicon glyphicon-remove"></i></a>
   </div>
 </div>

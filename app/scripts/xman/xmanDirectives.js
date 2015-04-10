@@ -89,11 +89,11 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
         } else { // We have an applied speed reduction
           if (flight.speed === flight.applied.speed) { // Applied speed equals requested speed
             if (buttonSpeed === flight.applied.speed) { // All is good, disable input
-              def = 'btn-success disabled';
+              def = 'btn-success';
             }
           } else {
             if (buttonSpeed === flight.applied.speed) {
-              def = 'btn-success disabled';
+              def = 'btn-success';
             }
             if (buttonSpeed === flight.speed) {
               def = 'btn-warning';
