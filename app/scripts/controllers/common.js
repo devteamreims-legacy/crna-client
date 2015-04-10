@@ -14,6 +14,12 @@ angular.module('commonControllers', ['ui.bootstrap'])
 .controller('navBarController', ['$scope', '$state', '$modal', function($scope, $state, $modal) {
   $scope.showHelp = function() {
     return $modal.open({
+      size: 'lg',
+      controller: function($scope, $modalInstance) {
+        $scope.closeHelp = function() {
+          $modalInstance.dismiss();
+        }
+      },
       templateUrl: 'views/help/' + $state.current.name + 'Help.html'
     });
   };
