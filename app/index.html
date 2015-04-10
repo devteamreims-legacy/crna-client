@@ -37,9 +37,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="navBarController">
           <ul class="nav navbar-nav">
-            <li ng-class="{ active: isActive('/xman')}" class="success"><a ui-sref='xman'>XMAN</a></li>
-            <li ng-class="{ active: isActive('/arcid')}" class="warning"><a ui-sref='arcid'>ARCID</a></li>
-            <li ng-class="{ active: isActive('/ctlroom')}" class="error"><a ui-sref="ctlroom">SALLE</a></li>
+            <li ui-sref-active="active"><a ui-sref='xman'>XMAN</a></li>
+            <li ui-sref-active="active"><a ui-sref='arcid'>ARCID</a></li>
+            <li ui-sref-active="active"><a ui-sref="ctlroom">SALLE</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -50,6 +50,9 @@
                 <li><a href="">Position</a></li>
                 <li><a href="">Recharger</a></li>
               </ul>
+            </li>
+            <li>
+              <a role="button" ng-click="showHelp()"><i class="glyphicon glyphicon-question-sign"></i></a>
             </li>
           </ul>
         </div>

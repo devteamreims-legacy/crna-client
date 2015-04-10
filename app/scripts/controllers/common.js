@@ -1,15 +1,5 @@
 'use strict';
 
-/**
- * Helper function to set 'activate' class on navbar tabs
- *
- */
-function SetNavbarTab($scope, $location) {
-  $scope.isActive = function (viewLocation) {
-    return viewLocation === $location.path();
-  };
-}
-
 
 /**
  * @ngdoc function
@@ -21,4 +11,8 @@ function SetNavbarTab($scope, $location) {
 angular.module('commonControllers', [])
 .controller('mainController', function ($scope) {
 })
-.controller('navBarController', ['$scope', '$location', SetNavbarTab]);
+.controller('navBarController', ['$scope', '$state', function($scope, $state) {
+  $scope.showHelp = function() {
+    console.log('Help for state :', $state.current);
+  };
+}]);
