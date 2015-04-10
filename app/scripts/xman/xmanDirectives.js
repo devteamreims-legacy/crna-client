@@ -81,6 +81,10 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
        */
       $scope.buttonClass = function(flight, buttonSpeed) {
         var def = '';
+        
+        if (flight.speed === '0') {
+          return 'disabled';
+        }
 
         if (flight.applied.speed === undefined) { // Nothing has been applied yet
           if (buttonSpeed === flight.speed) {
