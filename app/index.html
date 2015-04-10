@@ -46,9 +46,9 @@
               <a class="dropdown-toggle" data-toggle="dropdown" role="button">
                 <i class="glyphicon glyphicon-cog"></i>
               </a>
-              <ul class="dropdown-menu" role="menu">
+              <ul ng-controller="configController" class="dropdown-menu" role="menu">
                 <li><a href="">Position</a></li>
-                <li><a href="">Recharger</a></li>
+                <li><a ng-click="reloadPage()">Recharger</a></li>
               </ul>
             </li>
             <li>

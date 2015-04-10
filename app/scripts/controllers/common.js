@@ -23,4 +23,10 @@ angular.module('commonControllers', ['ui.bootstrap'])
       templateUrl: 'views/help/' + $state.current.name + 'Help.html'
     });
   };
+}])
+.controller('configController', ['$scope', '$window', function($scope, $window) {
+  $scope.reloadPage= function() {
+    return $window.location.reload();
+  };
+
 }]);
