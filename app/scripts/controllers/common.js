@@ -8,7 +8,7 @@
  * # MainCtrl
  * Controller of the crnaClientApp
  */
-angular.module('commonControllers', ['ui.bootstrap'])
+angular.module('commonControllers', ['ui.bootstrap', 'positionServices'])
 .controller('mainController', function () {
 })
 .controller('navBarController', ['$scope', '$state', '$modal', function($scope, $state, $modal) {
@@ -24,17 +24,26 @@ angular.module('commonControllers', ['ui.bootstrap'])
     });
   };
 }])
-.controller('configController', ['$scope', '$window', '$modal', function($scope, $window, $modal) {
+.controller('configController', ['$scope', '$window', '$modal', 'myPosition', function($scope, $window, $modal, myPosition) {
   $scope.reloadPage= function() {
     return $window.location.reload();
   };
 
   $scope.positionModal = function() {
     return $modal.open({
-      controller: ['$scope', '$modalInstance', function($scope, $modalInstance) {
+      controller: ['$scope', '$modalInstance', 'myPosition', function($scope, $modalInstance, myPosition) {
         $scope.closePositionModal = function() {
           $modalInstance.dismiss();
         }
+        
+        $scope.my = {selectedPosition: angular.copy(myPosition.myPosition.name)}; // Copy our current position
+
+        $scope.savePositionAndClose = function() {
+          console.log('Scope :', $scope.my.selectedPosition);
+          myPosition.setPosition({name: $scope.my.selectedPosition});
+          $modalInstance.dismiss();
+        };
+
       }],
       templateUrl: 'views/config/positionModal.html'
     });
