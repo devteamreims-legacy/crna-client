@@ -15,11 +15,11 @@ angular.module('commonControllers', ['ui.bootstrap'])
   $scope.showHelp = function() {
     return $modal.open({
       size: 'lg',
-      controller: function($scope, $modalInstance) {
+      controller: ['$scope', '$modalInstance', function($scope, $modalInstance) {
         $scope.closeHelp = function() {
           $modalInstance.dismiss();
         }
-      },
+      }],
       templateUrl: 'views/help/' + $state.current.name + 'Help.html'
     });
   };
@@ -31,11 +31,11 @@ angular.module('commonControllers', ['ui.bootstrap'])
 
   $scope.positionModal = function() {
     return $modal.open({
-      controller: function($scope, $modalInstance) {
+      controller: ['$scope', '$modalInstance', function($scope, $modalInstance) {
         $scope.closePositionModal = function() {
           $modalInstance.dismiss();
         }
-      },
+      }],
       templateUrl: 'views/config/positionModal.html'
     });
   };
