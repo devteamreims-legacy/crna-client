@@ -24,9 +24,19 @@ angular.module('commonControllers', ['ui.bootstrap'])
     });
   };
 }])
-.controller('configController', ['$scope', '$window', function($scope, $window) {
+.controller('configController', ['$scope', '$window', '$modal', function($scope, $window, $modal) {
   $scope.reloadPage= function() {
     return $window.location.reload();
   };
 
+  $scope.positionModal = function() {
+    return $modal.open({
+      controller: function($scope, $modalInstance) {
+        $scope.closePositionModal = function() {
+          $modalInstance.dismiss();
+        }
+      },
+      templateUrl: 'views/config/positionModal.html'
+    });
+  };
 }]);
