@@ -101,6 +101,16 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
         return;
       };
 
+      
+      $scope.mcsClass = function(flight) {
+        var ret = '';
+        if(flight.speed === '0') {
+          return 'disabled'; // No xman on this flight, disable it
+        }
+
+        ret = ((flight.applied.minCleanSpeed === true) ? 'btn-success' : '');
+        return ret;
+      };
 
       /*
        * Returns a css class given an xmanFlight and a buttonSpeed
