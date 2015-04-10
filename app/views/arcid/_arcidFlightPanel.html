@@ -1,12 +1,12 @@
 <div ng-init="showExtended = false" class="flight-panel panel panel-primary">
   <div class="panel-heading" ng-click="showExtended = !showExtended">
-    <span class="panel-title">AFR2010<br/><small>EDDM -&gt; EBBR</small></span>
+    <span class="panel-title">{{f.callsign}}<br/><small>{{f.departure}} -&gt; {{f.destination}}</small></span>
     <i class="glyphicon pull-right" ng-class="(showExtended) ? 'glyphicon-minus' : 'glyphicon-plus'"></i>
   </div>
-  <div ng-show="showExtended" id="flight-1123" class="panel-body collaspe" >
+  <div ng-show="showExtended" class="panel-body collaspe" >
     <table class="table table-striped table-hover table-condensed">
     <tbody>
-    <tr ng-repeat="pp in arcid.pointProfile">
+    <tr ng-repeat="pp in f.pointProfile">
       <td>{{pp.when | amDateFormat:'HH:mm:ss'}}</td>
       <td>{{pp.name}}</td>
       <td>{{pp.level}}{{pp.trend}}</td>

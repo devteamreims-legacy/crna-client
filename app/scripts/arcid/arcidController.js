@@ -6,12 +6,16 @@
  * @description
  * Arcid Controllers
  */
-angular.module('arcid', ['crnaConstants', 'arcidDirectives'])
-.controller('arcidController', ['$scope', 'arcidFlightList', 'arcidPointProfile', function ($scope, arcidFlightList, arcidPointProfile) {
+angular.module('arcid', ['crnaConstants', 'arcidDirectives', 'arcidServices', 'underscore'])
+.controller('arcidController', ['$scope', 'allArcidFlights', '_', function ($scope, allArcidFlights, _) {
   var arcid = this;
+  arcid.flightList = new allArcidFlights().flights;
 
-  arcid.flightList = arcidFlightList;
-  
-  arcid.pointProfile = arcidPointProfile;
+  arcid.displayedFlights = [];
 
+  $scope.addDisplayedFlight = function(f) {
+    arcid.displayedFlights = _.without(arcid.displayedFlights, f); // Remove if already present
+    arcid.displayedFlights.unshift(f);
+    arcid.displayedFlights = arcid.displayedFlights.slice(0, 4); // Keep 4 elements only
+  };
 }]);

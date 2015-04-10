@@ -5,10 +5,10 @@
       <i class="glyphicon glyphicon-search form-control-feedback"></i>
     </div>
     <div class="btn-group-vertical" style="width: 100%;" role="group">
-      <button class="btn btn-sm btn-default" style="text-align: left;" ng-repeat="callsign in arcid.flightList | limitTo:7">{{callsign}}</button>
+      <button class="btn btn-sm btn-default" style="text-align: left;" ng-click="addDisplayedFlight(f)" ng-repeat="f in arcid.flightList | limitTo:7">{{f.callsign}}</button>
     </div>
   </div>
   <div id="arcid-right-col" class="col-md-9 col-sm-8">
-    <arcid-flight-panel />
+    <arcid-flight-panel ng-repeat="f in arcid.displayedFlights" />
   </div>
 </div>
