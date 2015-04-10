@@ -38,11 +38,11 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
     controller: ['$scope', function($scope) {
       $scope.delayClass = function(flight) {
         if(flight.delay >= 20) {
-          return 'text-danger';
+          return 'label-danger';
         } else if (flight.delay >= 10) {
-          return 'text-warning';
+          return 'label-warning';
         } else {
-          return 'text-success';
+          return 'label-success';
         }
       };
     }]
