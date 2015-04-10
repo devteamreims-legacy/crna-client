@@ -18,7 +18,7 @@ angular.module('commonControllers', ['ui.bootstrap', 'positionServices'])
       controller: ['$scope', '$modalInstance', function($scope, $modalInstance) {
         $scope.closeHelp = function() {
           $modalInstance.dismiss();
-        }
+        };
       }],
       templateUrl: 'views/help/' + $state.current.name + 'Help.html'
     });
@@ -34,7 +34,7 @@ angular.module('commonControllers', ['ui.bootstrap', 'positionServices'])
       controller: ['$scope', '$modalInstance', 'myPosition', function($scope, $modalInstance, myPosition) {
         $scope.closePositionModal = function() {
           $modalInstance.dismiss();
-        }
+        };
         
         $scope.my = {selectedPosition: angular.copy(myPosition.myPosition.name)}; // Copy our current position
 
