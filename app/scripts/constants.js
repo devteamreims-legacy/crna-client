@@ -108,4 +108,31 @@ angular.module('crnaConstants', [])
   {name: 'UTELA', when: Date.now() - 1000*60*4 + 180*1000, level: 340, trend: ''},
   {name: 'KOPOR', when: Date.now() - 1000*60*4 + 240*1000, level: 340, trend: ''},
   {name: 'SOMIL', when: Date.now() - 1000*60*4 + 360*1000, level: 340, trend: ''}
+])
+.constant('eapStubMessages', [
+  {
+    category: 'stam',
+    when: Date.now() - 1000*60*2,
+    data: {
+      proposedFlights: ['BAW655', 'EZY645'],
+      sectorsToAvoid: ['HN', 'KN'],
+      numberOfFlights: 1
+    }
+  },{
+    category: 'hotspot',
+    when: Date.now() - 1000*60*2 + 1000*25,
+    data: {
+      sectors: ['UR', 'XR'],
+      start: Date.now() - 1000*60*42,
+      end: Date.now() + 1000*60*18
+    }
+  },{
+    category: 'regulation',
+    when: Date.now() - 1000*60*124,
+    data: {
+      sectors: ['KR', 'HR'],
+      start: Date.now() - 1000*60*35,
+      end: Date.now() + 1000*60*55
+    }
+  }
 ]);
