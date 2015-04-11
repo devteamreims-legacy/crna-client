@@ -6,7 +6,7 @@
  * @description
  * Arcid Controllers
  */
-angular.module('arcid', ['crnaConstants', 'arcidDirectives', 'arcidServices', 'underscore'])
+angular.module('arcidController', ['crnaConstants', 'arcidDirectives', 'arcidServices', 'underscore'])
 .controller('ArcidController', ['$scope', 'allArcidFlights', '_', function ($scope, allArcidFlights, _) {
   var arcid = this;
   arcid.flightList = new allArcidFlights().flights;
