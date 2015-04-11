@@ -5,6 +5,6 @@
  * @name crnaClientApp.xman
  * @description
  * # xman module
- * Meta module to include EAP components
+ * Meta module to include xman components
  */
 angular.module('xman', ['xmanController', 'xmanDirectives']);

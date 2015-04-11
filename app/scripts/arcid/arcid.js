@@ -5,6 +5,6 @@
  * @name crnaClientApp.arcid
  * @description
  * # arcid module
- * Meta module to include EAP components
+ * Meta module to include arcid components
  */
 angular.module('arcid', ['arcidController', 'arcidServices', 'arcidDirectives']);
