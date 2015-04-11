@@ -24,7 +24,7 @@ angular.module('commonControllers', ['ui.bootstrap', 'positionServices'])
     });
   };
 }])
-.controller('configController', ['$scope', '$window', '$modal', 'myPosition', function($scope, $window, $modal, myPosition) {
+.controller('configController', ['$scope', '$window', '$modal', function($scope, $window, $modal) {
   $scope.reloadPage= function() {
     return $window.location.reload();
   };
