@@ -1,0 +1,19 @@
+<accordion close-others="false">
+  <accordion-group ng-class="ctrl.panelClass(m)" ng-repeat="m in ctrl.my.messages" is-open="status.open">
+    <accordion-heading>
+      {{m.category}}
+      <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      <span class="pull-right" am-time-ago="m.when"></span>
+    </accordion-heading>
+    {{m}}
+  </accordion-group>
+</accordion>
+
+<div ng-repeat="m in ctrl.my.messages" class="panel" ng-class="ctrl.panelClass(m)">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{m.category}}</h3>
+  </div>
+  <div class="panel-body">
+    {{m}}
+  </div>
+</div>

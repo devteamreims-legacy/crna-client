@@ -21,5 +21,6 @@ angular
     'sector', // Secteurs
     'xman', // Xman
     'arcid', // arcid
+    'eap', // Extended ATC Planner
     'commonControllers' // Controllers communs
 ]);
