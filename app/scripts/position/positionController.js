@@ -4,10 +4,10 @@
  * @ngdoc function
  * @name crnaClientApp.controller:PositionCtrl
  * @description
- * # PositionCtrl 
- * Controller of the crnaClientApp
+ * # positionController
+ * Controller for the position module
  */
-angular.module('position', ['positionServices', 'positionDirectives'])
+angular.module('positionController', ['positionServices', 'positionDirectives'])
 .controller('PositionController', ['$scope', 'myPosition', function($scope, myPosition) {
   var vm = this;
   vm.myPosition = myPosition.myPosition;
