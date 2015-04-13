@@ -11,7 +11,7 @@
   vertical-align: middle;
   display: inline-block;
   padding: 0;
-  background-color: $green; 
+  background-color: $header-background; 
   @include z-depth(1);
   @include clearfix;
 }
@@ -55,5 +55,9 @@
   color: white;
   line-height: $header-height;
   text-decoration: none;
+  @include transition(background-color 0.5s ease-in-out);
+}
 
+.main-nav__link.active {
+  background-color: $header-background-active;
 }

@@ -104,12 +104,9 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
       
       $scope.mcsClass = function(flight) {
         var ret = '';
-        if(flight.speed === '0') {
-          return 'disabled'; // No xman on this flight, disable it
-        }
-
+        
         if(flight.applied.minCleanSpeed === true) {
-          ret = 'btn-success';
+          ret = 'selected';
         }
         return ret;
       };
@@ -120,25 +117,22 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
       $scope.buttonClass = function(flight, buttonSpeed) {
         var def = '';
         
-        if (flight.speed === '0') {
-          return 'disabled';
-        }
 
         if (flight.applied.speed === undefined) { // Nothing has been applied yet
           if (buttonSpeed === flight.speed) {
-            def = 'btn-warning'; // Requested speed will show as primary
+            def = 'proposed'; // Requested speed will show as primary
           }
         } else { // We have an applied speed reduction
           if (flight.speed === flight.applied.speed) { // Applied speed equals requested speed 
             if (buttonSpeed === flight.applied.speed) { // All is good, disable input
-              def = 'btn-success';
+              def = 'selected';
             }
           } else {
             if (buttonSpeed === flight.applied.speed) {
-              def = 'btn-success';
+              def = 'selected';
             }
             if (buttonSpeed === flight.speed) {
-              def = 'btn-warning';
+              def = 'proposed';
             }
           }
         }
