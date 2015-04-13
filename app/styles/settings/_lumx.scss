@@ -5,10 +5,10 @@
 @import "../bower_components/lumx/dist/scss/settings/colors";
 
 // High-level base settings.
-$base-font-size:        28px;
-$base-line-height:      45px;
+$base-font-size:        16px;
+$base-line-height:      24px;
 $base-text-color:       $black;
-$base-background-color: $grey-200;
+$base-background-color: $white;
 $base-round:            2px;
 
 // Colors and sizes
@@ -43,12 +43,20 @@ $accent-color-2:        $pink-A100;
 $accent-color-3:        $pink-A400;
 
 // Sizes
+//Defaults 
 $size-xs:               24px;
 $size-s:                30px;
 $size-m:                36px;
 $size-l:                40px;
 $size-xl:               56px;
 
+/*
+$size-xs:               50px;
+$size-s:                58px;
+$size-m:                63px;
+$size-l:                70px;
+$size-xl:               80px;
+*/
 // Success, danger, warning
 $success:               $green;
 $warning:               $amber;

@@ -33,6 +33,7 @@
 
 .main-nav-buttons {
   float: right;
+  @extend .tc-white-1;
   ul {
     @extend %bare-list;
     li {
@@ -49,7 +50,7 @@
   display: block;
   padding: 0 $base-spacing-unit * 1.5;
   border-radius: $base-round;
-  @include font-size(38px);
+  @include font-size(24px);
   font-weight: 500;
   color: white;
   line-height: $header-height;

@@ -1,11 +1,11 @@
 <div class="speed-buttons btn-group" role="group">
-  <a ng-class="buttonClass(flight, s)" class="btn btn-sm btn-default" ng-repeat="s in xmanDefaultSpeeds" ng-click="setSpeed(flight, s)">
+  <button ng-class="buttonClass(flight, s)" lx-ripple class="btn btn--m btn--white btn--raised" ng-repeat="s in xmanDefaultSpeeds" ng-click="setSpeed(flight, s)">
     {{s}}
-  </a><a 
+  </button><button 
   class="btn btn-default btn-sm" ng-class="mcsClass(flight)" ng-click="toggleMcs(flight)">
     MCS
-  </a><a
-  class="btn btn-default btn-sm" ng-class="(flight.speed === '0') ? 'disabled' : ''" ng-click="undoSpeed(flight)" >
+  </button><button
+  class="btn btn-default btn-sm" ng-class="(flight.speed === '0') ? 'btn--is-disabled' : ''" ng-click="undoSpeed(flight)" >
     <i class="text-danger glyphicon glyphicon-remove"></i>
-  </a>
+  </button>
 </div>

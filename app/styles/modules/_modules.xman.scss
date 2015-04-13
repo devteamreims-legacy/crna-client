@@ -1,5 +1,41 @@
 /* Center vertical align xman table */
 
+.xman-row, .xman-row-title {
+  @include span-columns(12);
+
+  .callsign {
+    @include span-columns(3 of 12);
+  }
+
+  .delay {
+    @include span-columns(1 of 12);
+  }
+
+  .speeds {
+    @include span-columns(5 of 12);
+  }
+
+  .applied {
+    @include span-columns(3 of 12);
+  }
+
+}
+
+.xman-row.speed-applied {
+  @include success-background-color;
+}
+
+.xman-row.speed-not-applied {
+  @include danger-background-color;
+}
+
+.xman-row.correct-speed-applied {
+  @include success-background-color;
+}
+
+.xman-row.no-speed-to-apply {
+  @include success-background-color;
+}
 
 .xman-table > tbody > tr.success > td,
 .xman-table > tbody > tr.danger > td 

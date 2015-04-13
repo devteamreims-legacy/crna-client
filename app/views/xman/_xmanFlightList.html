@@ -1,22 +1,38 @@
-<table st-table="x.xmanData" class="xman-table table">
-  <thead>
-  <tr>
-    <th>Callsign</th>
-    <th>Delay</th>
-    <th>Speed</th>
-    <th>Applied</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr ng-class="getRowClass(flight)" ng-repeat="flight in x.xmanData track by flight.flightId">
-    <td class="col-md-3"><strong>{{flight.callsign}}</strong></td>
-    <td class="col-md-1 text-center"><xman-delay flight="flight" /></td>
-    <td class="col-md-5">
-      <xman-speed flight="flight" />
-    </td>
-    <td class="col-md-3">
-      <xman-applied-by flight="flight" />
-    </td>
-  </tr>
-  </tbody>
-</table>
+<div class="xman-row-title">
+  <div class="callsign">Callsign</div>
+  <div class="delay">Delay</div>
+  <div class="speeds">Speed</div>
+  <div class="applied">Applied</div>
+</div>
+
+<div class="xman-row" ng-class="getRowClass(flight)" ng-repeat="flight in x.xmanData track by flight.flightId">
+  <div class="callsign">{{flight.callsign}}</div>
+  <div class="delay"><xman-delay flight="flight" /></div>
+  <div class="speeds"><xman-speed flight="flight" /></div>
+  <div class="applied"><xman-applied-by flight="flight" /></div>
+</div>
+
+<div class="data-table-container">
+  <table class="xman-table data-table">
+    <thead>
+    <tr>
+      <th>Callsign</th>
+      <th>Delay</th>
+      <th>Speed</th>
+      <th>Applied</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-class="getRowClass(flight)" ng-repeat="flight in x.xmanData track by flight.flightId">
+      <td class="col-md-3"><strong>{{flight.callsign}}</strong></td>
+      <td class="col-md-1 text-center"><xman-delay flight="flight" /></td>
+      <td class="col-md-5">
+        <xman-speed flight="flight" />
+      </td>
+      <td class="col-md-3">
+        <xman-applied-by flight="flight" />
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

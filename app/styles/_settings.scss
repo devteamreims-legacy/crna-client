@@ -1,3 +1,25 @@
 // CRNA App settings
 
 $header-height: 80px;
+
+$app-font-zoom: 130%;
+
+
+// TODO Mixins
+
+@mixin success-background-color($type: light) {
+  @if $type == light {
+    background-color: $green-50;
+  } @else {
+    background-color: $green;
+  }
+}
+
+@mixin danger-background-color($type: light) {
+  @if $type == light {
+    background-color: $red-50;
+  } @else {
+    background-color: $red;
+  }
+}
+

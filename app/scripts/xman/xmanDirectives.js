@@ -15,11 +15,11 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
     controller: 'XmanController', // Link to Position Controller
     controllerAs: 'x',
     templateUrl: 'views/xman/_xmanFlightList.html',
-    link: function(scope, element, attrs) {
+    link: function(scope) {
       scope.getRowClass = function(flight) {
-        var ret = 'success';
+        var ret = 'no-speed-to-apply';
         if(_.isEmpty(flight.applied) === true && flight.speed !== '0') {
-          ret = 'danger';
+          ret = 'speed-not-applied';
         }
         return ret;
       };
@@ -38,11 +38,11 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
     controller: ['$scope', function($scope) {
       $scope.delayClass = function(flight) {
         if(flight.delay >= 20) {
-          return 'label-danger';
+          return 'high-delay';
         } else if (flight.delay >= 10) {
-          return 'label-warning';
+          return 'medium-delay';
         } else {
-          return 'label-success';
+          return 'low-delay';
         }
       };
     }]
