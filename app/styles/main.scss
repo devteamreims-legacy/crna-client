@@ -1,5 +1,6 @@
 // Import custom variables
-@import "variables";
+@import "settings/lumx";
+@import "settings/neat";
 @import "lumx/dist/scss/lumx";
 
 @import "mdi/scss/_variables.scss";
@@ -10,8 +11,10 @@
 @import "bourbon/app/assets/stylesheets/_bourbon.scss";
 @import "mdi/scss/_core.scss";
 @import "mdi/scss/materialdesignicons.scss";
+@import "neat/app/assets/stylesheets/_neat.scss";
 // endbower
 
+@import "settings";
 
 // Import SCSS modules
 @import "modules/common/modules.common.header";
@@ -19,22 +22,8 @@
 @import "modules/common/modules.common.layout";
 @import "modules/common/modules.common.footer";
 
-// Import custom styling after bootstrap to override
+// Import custom styling 
 @import "navbar";
 @import "xman";
 @import "arcid";
 
-html, body {
-  height: 100%;
-}
-
-body {
-  /* Navbar fixed top overlaps content otherwise */
-  padding-top: 90px;
-}
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}

@@ -2,8 +2,6 @@
 //    #MODULES-COMMON-HEADER
 //\*------------------------------------*/
 
-$header-height: 80px;
-
 // Header base styles
 .header {
 	@include position(fixed, 0 0 null 0);
