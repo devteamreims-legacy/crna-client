@@ -8,11 +8,12 @@
  * # MainCtrl
  * Controller of the crnaClientApp
  */
-angular.module('commonControllers', ['ui.bootstrap', 'positionServices'])
+angular.module('commonControllers', ['positionServices'])
 .controller('mainController', function () {
 })
-.controller('navBarController', ['$scope', '$state', '$modal', function($scope, $state, $modal) {
+.controller('navBarController', ['$scope', '$state', 'LxDialogService', function($scope, $state, LxDialogService) {
   $scope.showHelp = function() {
+    return;
     return $modal.open({
       size: 'lg',
       controller: ['$scope', '$modalInstance', function($scope, $modalInstance) {
@@ -24,12 +25,13 @@ angular.module('commonControllers', ['ui.bootstrap', 'positionServices'])
     });
   };
 }])
-.controller('configController', ['$scope', '$window', '$modal', function($scope, $window, $modal) {
+.controller('configController', ['$scope', '$window', 'LxDialogService', function($scope, $window, LxDialogService) {
   $scope.reloadPage= function() {
     return $window.location.reload();
   };
 
   $scope.positionModal = function() {
+    return;
     return $modal.open({
       controller: ['$scope', '$modalInstance', 'myPosition', function($scope, $modalInstance, myPosition) {
         $scope.closePositionModal = function() {

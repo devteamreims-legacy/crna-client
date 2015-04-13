@@ -1,17 +1,23 @@
 // Import custom variables
 @import "variables";
-$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import "lumx/dist/scss/lumx";
+
+@import "mdi/scss/_variables.scss";
+@import "mdi/scss/_icons.scss";
+@import "mdi/scss/_path.scss";
 
 // bower:scss
 @import "bourbon/app/assets/stylesheets/_bourbon.scss";
 @import "mdi/scss/_core.scss";
-@import "mdi/scss/_icons.scss";
-@import "mdi/scss/_path.scss";
-@import "mdi/scss/_variables.scss";
 @import "mdi/scss/materialdesignicons.scss";
 // endbower
-// Import bootswatch
-@import "bootswatch";
+
+
+// Import SCSS modules
+@import "modules/common/modules.common.header";
+@import "modules/common/modules.common.main";
+@import "modules/common/modules.common.layout";
+@import "modules/common/modules.common.footer";
 
 // Import custom styling after bootstrap to override
 @import "navbar";

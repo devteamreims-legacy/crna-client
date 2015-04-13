@@ -21,6 +21,8 @@ module.exports = function (grunt) {
     dist: '../crna-server/dist'
   };
 
+  grunt.loadNpmTasks('grunt-webfont');
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -45,7 +47,7 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       compass: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        files: ['<%= yeoman.app %>/styles/**/*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer']
       },
       gruntfile: {
@@ -215,7 +217,7 @@ module.exports = function (grunt) {
         importPath: './bower_components',
         httpImagesPath: '/images',
         httpGeneratedImagesPath: '/images/generated',
-        httpFontsPath: '/styles/fonts',
+        httpFontsPath: '/fonts',
         relativeAssets: false,
         assetCacheBuster: false,
         raw: 'Sass::Script::Number.precision = 10\n'
@@ -385,8 +387,9 @@ module.exports = function (grunt) {
           src: ['generated/*']
         }, {
           expand: true,
-          cwd: '.',
-          src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
+          dot: true,
+          cwd: 'bower_components/mdi',
+          src: ['fonts/*.*'],
           dest: '<%= yeoman.dist %>'
         }]
       },
