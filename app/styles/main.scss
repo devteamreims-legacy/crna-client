@@ -1,6 +1,7 @@
 // Import custom variables
 // Import lumx settings
 @import "settings/lumx";
+@import "googlefonts";
 // Import bourbon before neat settings
 @import "bourbon/app/assets/stylesheets/_bourbon.scss";
 @import "settings/neat";
@@ -19,6 +20,7 @@
 @import "neat/app/assets/stylesheets/_neat.scss";
 // endbower
 
+// Import globals
 @import "settings";
 
 // Import custom styling in SCSS modules
