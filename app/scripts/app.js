@@ -19,6 +19,7 @@ angular
     'lumx',
     'crnaRoutes', // Angular-ui-router routes
     'position', // Position module
+    'navbar', // Navbar
     'sector', // Secteurs
     'xman', // Xman
     'arcid', // arcid
