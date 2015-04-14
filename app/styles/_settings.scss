@@ -21,6 +21,15 @@ $app-font-zoom: 130%;
   }
 }
 
+@mixin warning-background-color($type: light) {
+  @if $type == light {
+    background-color: $orange-100;
+  } @else {
+    background-color: $orange;
+  }
+}
+
+
 @mixin danger-background-color($type: light) {
   @if $type == light {
     background-color: $red-100;
@@ -29,3 +38,27 @@ $app-font-zoom: 130%;
   }
 }
 
+// Same with text color
+@mixin success-color($type: dark) {
+  @if $type == dark {
+    color: $green;
+  } @else {
+    color: $green-100;
+  }
+}
+
+@mixin warning-color($type: dark) {
+  @if $type == dark {
+    color: $orange;
+  } @else {
+    color: $orange-100;
+  }
+}
+
+@mixin danger-color($type: dark) {
+  @if $type == dark {
+    color: $red;
+  } @else {
+    color: $red-100;
+  }
+}
