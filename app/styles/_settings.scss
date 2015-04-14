@@ -10,6 +10,13 @@ $app-font-zoom: 130%;
 
 
 
+.bgc-main-color {
+  @extend .bgc-blue-500;
+}
+
+.tc-main-color {
+  @extend .tc-white;
+}
 
 // Some background mixins
 

@@ -1,0 +1,24 @@
+/* Position choice modal */
+
+#position-dialog {}
+
+// Layout
+
+#position-dialog .choose-position.row {
+  @include outer-container;
+  .west {
+    @include span-columns(4);
+  }
+  .east {
+    @include span-columns(4);
+  }
+  .night {
+    @include span-columns(4);
+  }
+}
+// Styling
+#position-dialog .toolbar {
+  @extend .bgc-main-color;
+  @extend .tc-main-color;
+}
+

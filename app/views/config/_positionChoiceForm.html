@@ -1,0 +1,41 @@
+<div class="dialog__content">
+  <form>
+  <div class="choose-position row">
+    <div class="west">
+      <h3>Ouest</h3>
+      <div class="radio-group">
+        <div class="radio-button" ng-repeat="p in [30, 31, 32, 33, 34, 35, 36, 37]">
+          <input type="radio" class="radio-button__input" id="position{{p}}" name="position" ng-model="choosePositionForm.my.selectedPosition" ng-value="p">
+          <label for="position{{p}}" class="radio-button__label">P{{p}}</label>
+        </div>
+      </div>
+    </div>
+    <div class="east">
+      <h3>Est</h3>
+      <div class="radio-group">
+        <div class="radio-button" ng-repeat="p in [20, 21, 22, 23, 24, 25, 26, 27]"> 
+          <input type="radio" class="radio-button__input" id="position{{p}}" name="position" ng-model="choosePositionForm.my.selectedPosition" ng-value="p">
+          <label for="position{{p}}" class="radio-button__label">P{{p}}</label>
+        </div>
+      </div>
+    </div>
+    <div class="night">
+      <h3>Nuit</h3>
+      <div class="radio-group">
+        <div class="radio-button" ng-repeat="p in [11, 12, 13, 14]"> 
+          <input type="radio" class="radio-button__input" id="position{{p}}" name="position" ng-model="choosePositionForm.my.selectedPosition" ng-value="p">
+          <label for="position{{p}}" class="radio-button__label">P{{p}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  </form>
+</div>
+<div class="dialog__actions">
+  <button type="button" class="btn save btn--green btn--l btn--fab btn--raised" lx-ripple ng-click="choosePositionForm.saveAndCloseDialog()" >
+    <i class="mdi mdi-check"></i>
+  </button>
+  <button type="button" class="btn discard btn--red btn--l btn--fab btn--raised" lx-ripple ng-click="choosePositionForm.closeDialog()" >
+    <i class="mdi mdi-close"></i>
+  </button>
+</div>

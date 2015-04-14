@@ -29,8 +29,9 @@
 @import "modules/common/modules.common.layout";
 @import "modules/common/modules.common.footer";
 
+@import "modules/config/modules.config.positionchoice";
 // Import custom styling 
 @import "navbar";
 @import "modules/modules.xman";
-@import "arcid";
+@import "modules/modules.arcid";
 
