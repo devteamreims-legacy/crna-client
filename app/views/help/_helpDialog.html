@@ -1,0 +1,13 @@
+<lx-dialog class="dialog dialog--l" id="help-dialog">
+  <div class="dialog__header">
+    <div class="toolbar">
+    <span class="toolbar__label fs-title">Aide {{ helpDialog.title() }}</span>
+  </div>
+  <div ng-include="helpDialog.subTemplateUrl()" class="dialog__content">
+  </div>
+  <div class="dialog__actions">
+    <button type="button" class="btn discard btn--red btn--l btn--fab btn--raised" lx-ripple ng-click="helpDialog.close()" >
+      <i class="mdi mdi-close"></i>
+    </button>
+  </div>
+</lx-dialog>

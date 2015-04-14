@@ -60,6 +60,33 @@ angular.module('navbarDirectives', ['lumx', 'positionServices'])
     controllerAs: 'choosePositionForm',
     templateUrl: 'views/config/_positionChoiceForm.html'
   };
+})
+.directive('crnaHelpButton', function() {
+  return {
+    restrict: 'A',
+    transclude: true,
+    controller: ['LxDialogService', '$state', function(LxDialogService, $state) {
+      var vm = this;
+      vm.open = function() {
+        LxDialogService.open('help-dialog');
+      };
+      vm.close = function() {
+        LxDialogService.close('help-dialog');
+      };
+      vm.title = function() {
+        return $state.current.name;
+      };
+      vm.subTemplateUrl = function() {
+        return 'views/help/' + $state.current.name + 'Help.html';
+      };
+
+    }],
+    controllerAs: 'helpDialog',
+    template: '<div ng-click="helpDialog.open()" ng-transclude></div>' +
+              '<div ng-include="\'views/help/_helpDialog.html\'"></div>'
+    
+  };  
+  
 });
 
 
