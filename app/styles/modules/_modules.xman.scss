@@ -3,6 +3,8 @@
 .xman-row, .xman-row-title {
   @include span-columns(12);
   display: flex;
+  @extend .has-divider;
+  @extend .has-divider--dark;
   .callsign {
     @include span-columns(3 of 12);
     margin: auto;
@@ -25,13 +27,19 @@
   }
 
 }
+/* Callsign */
+.xman-row .callsign {
+  @extend .fs-title;
+}
 
+/* Speeds and speed buttons */
 .xman-row .speeds .speed-buttons > button {
   @extend .btn;
   @extend .btn--raised;
   @extend .btn--white;
   border-radius: 0;
   padding: 0 rem(8px);
+  // Transition
   @include transition(background-color 0.5s $ease-out-cubic, color 0.5s $ease-out-cubic);
   &:first-of-type {
     @include border-left-radius($base-round);
@@ -66,42 +74,26 @@
   @include success-background-color;
 }
 
-.xman-table > tbody > tr.success > td,
-.xman-table > tbody > tr.danger > td 
-{
-  vertical-align: middle;
-  // CSS Transitions
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+/* Delay */
+.xman-row .delay {
+  text-align: center;
+  .high-delay {
+    @include danger-color;
+  }
+  .medium-delay {
+    @include warning-color;
+  }
+  .low-delay {
+    @include success-color;
+  }
 }
 
-.xman-table div.speed-buttons {
-  white-space: nowrap; // Bootstrap workaround for floating buttons in table
-  vertical-align: middle;
+/* Applied by */
+.xman-row .applied {
+  .applied-by-main {
+  }
+  .applied-by-meta {
+    @extend .fs-caption;
+    @include text-muted;
+  }
 }
-
-.xman-table div.speed-buttons > a {
-  float: none; // Bootstrap workaround for floating buttons in table
-  display: inline-block;
-}
-
-.xman-table p.applied-by-main,
-.xman-table p.applied-by-meta
-{
-  margin-bottom: 0;
-  line-height: 1em;
-}
-
-.xman-table div.speed-buttons > a.btn-success-add, 
-.xman-table div.speed-buttons > a.btn-warning-add,
-.xman-table div.speed-buttons > a.btn-success-remove, 
-.xman-table div.speed-buttons > a.btn-warning-remove
-{
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-}
-
