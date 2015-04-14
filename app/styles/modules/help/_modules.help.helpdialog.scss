@@ -1,0 +1,16 @@
+/* Position choice modal */
+
+#help-dialog {}
+
+// Layout
+
+#help-dialog .content {
+  @extend .has-divider;
+  @extend .has-divider--dark;
+}
+// Styling
+#help-dialog .toolbar {
+  @extend .bgc-main-color;
+  @extend .tc-main-color;
+}
+
