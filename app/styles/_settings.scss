@@ -62,3 +62,12 @@ $app-font-zoom: 130%;
     color: $red-100;
   }
 }
+
+/* Text mixins */
+@mixin text-muted($type: dark) {
+  @if $type == dark {
+    color: $black-2;
+  } @else {
+    color: $white-3;
+  }
+}
