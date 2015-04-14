@@ -8,13 +8,18 @@
   @include outer-container;
   .west {
     @include span-columns(4);
+    padding: rem(10);
   }
   .east {
     @include span-columns(4);
+    padding: rem(10);
   }
   .night {
     @include span-columns(4);
+    padding: rem(10);
   }
+  @extend .has-divider;
+  @extend .has-divider--dark;
 }
 // Styling
 #position-dialog .toolbar {
