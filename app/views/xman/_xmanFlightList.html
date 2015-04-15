@@ -5,7 +5,7 @@
   <div flex="20" class="applied">Applied</div>
 </div>
 
-<div layout="row" class="xman-row" ng-class="getRowClass(flight)" ng-repeat="flight in x.xmanData track by flight.flightId">
+<div layout="row" layout-align="start center" class="xman-row" ng-class="getRowClass(flight)" ng-repeat="flight in x.xmanData track by flight.flightId">
   <div flex="20" class="callsign">{{flight.callsign}}</div>
   <div flex="10" class="delay"><xman-delay flight="flight" /></div>
   <div flex="50" class="speeds"><xman-speed flight="flight" /></div>
