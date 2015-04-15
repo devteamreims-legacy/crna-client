@@ -15,8 +15,6 @@
     "angular-smart-table": "~2.0.1",
     "angular-moment": "~0.9.2",
     "underscore": "~1.8.3",
-    "lumx": "~0.3.25",
-    "neat": "~1.7.2",
     "angular-material": "~0.8.3"
   },
   "devDependencies": {

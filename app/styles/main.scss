@@ -1,39 +1,21 @@
-// Import custom variables
-// Import lumx settings
-@import "settings/lumx";
 @import "googlefonts";
-// Import bourbon before neat settings
-@import "bourbon/app/assets/stylesheets/_bourbon.scss";
-@import "settings/neat";
-
-// Import lumx
-@import "lumx/dist/scss/lumx";
 
 // Import mdi stuff
-@import "mdi/scss/_variables.scss";
-@import "mdi/scss/_icons.scss";
-@import "mdi/scss/_path.scss";
+//@import "mdi/scss/_variables.scss";
+//@import "mdi/scss/_icons.scss";
+//@import "mdi/scss/_path.scss";
 
 // bower:scss
-@import "mdi/scss/_core.scss";
-@import "mdi/scss/materialdesignicons.scss";
-@import "neat/app/assets/stylesheets/_neat.scss";
 // endbower
 
 // Import globals
-@import "settings";
+//@import "settings";
 
-// Import custom styling in SCSS modules
-@import "modules/common/modules.common.header";
-@import "modules/common/modules.common.main";
-@import "modules/common/modules.common.layout";
-@import "modules/common/modules.common.footer";
-
-@import "modules/config/modules.config.positionchoice";
-@import "modules/help/modules.help.helpdialog";
+//@import "modules/config/modules.config.positionchoice";
+//@import "modules/help/modules.help.helpdialog";
 
 // Import custom styling 
-@import "modules/modules.navbar";
-@import "modules/modules.xman";
-@import "modules/modules.arcid";
+//@import "modules/modules.navbar";
+//@import "modules/modules.xman";
+//@import "modules/modules.arcid";
 
