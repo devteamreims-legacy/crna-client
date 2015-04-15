@@ -1,0 +1,67 @@
+/* Center vertical align xman table */
+
+/* Callsign */
+.xman-row .callsign {
+//  @extend .fs-title;
+}
+
+/* Speeds and speed buttons */
+.xman-row .speeds .speed-buttons > button {
+  border-radius: 0;
+  padding: 0 rem(8px);
+  // Transition
+  @include transition(background-color 0.5s $ease-out-cubic, color 0.5s $ease-out-cubic);
+  &:first-of-type {
+    @include border-left-radius(2px);
+  }
+  &:last-of-type {
+    @include border-right-radius(2px);
+  }
+  &.selected {
+//    @extend .btn--green;
+  }
+  &.proposed {
+//    @extend .btn--orange;
+  }
+  &.undo {
+//    @extend .btn--red;
+  }
+}
+
+.xman-row.speed-applied {
+//  @include success-background-color;
+}
+
+.xman-row.speed-not-applied {
+//  @include danger-background-color;
+}
+
+.xman-row.correct-speed-applied {
+//  @include success-background-color;
+}
+
+.xman-row.no-speed-to-apply {
+//  @include success-background-color;
+}
+
+/* Delay */
+.xman-row .delay {
+  text-align: center;
+  .high-delay {
+//    @include danger-color;
+  }
+  .medium-delay {
+//    @include warning-color;
+  }
+  .low-delay {
+//    @include success-color;
+  }
+}
+
+/* Applied by */
+.xman-row .applied {
+  .applied-by-main {
+  }
+  .applied-by-meta {
+  }
+}
