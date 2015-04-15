@@ -25,16 +25,16 @@
     <!-- Add your site or application content here -->
     <md-toolbar layout="row" layout-align="space-between center">
       <nav class="main-nav">
-        <md-button ui-sref-active="active" ui-sref='root'><crna-my-sectors/></md-button>
+        <md-button ui-sref-active="active" aria-label="Homepage" ui-sref='root'><crna-my-sectors/></md-button>
         <md-button ui-sref-active="active" ui-sref='xman'>XMAN</md-button>
         <md-button ui-sref-active="active" ui-sref='arcid'>ARCID</md-button>
         <md-button ui-sref-active="active" ui-sref='ctlroom'>SALLE</md-button>
       </nav>
 
       <nav layout-align="right center" class="main-nav-buttons">
-        <crna-choose-position><md-button class="md-icon-button"><i class="mdi mdi-settings"></i></md-button></crna-choose-position>
-        <crna-help-button><md-button class="md-icon-button"><i class="mdi mdi-help"></i></md-button></crna-help-button>
-        <crna-reload-app><md-button class="md-icon-button"><i class="mdi mdi-refresh"></i></md-button></crna-reload-app>
+        <crna-choose-position><md-button aria-label="Configure position" class="md-icon-button"><i class="mdi mdi-settings"></i></md-button></crna-choose-position>
+        <crna-help-button><md-button aria-label="Help" class="md-icon-button"><i class="mdi mdi-help"></i></md-button></crna-help-button>
+        <crna-reload-app><md-button aria-label="Reload app" class="md-icon-button"><i class="mdi mdi-refresh"></i></md-button></crna-reload-app>
       </nav>
     </md-toolbar>
 
