@@ -7,7 +7,7 @@
  * # navbarDirectives
  * Directives for xman
  **/
-angular.module('navbarDirectives', ['lumx', 'positionServices'])
+angular.module('navbarDirectives', ['positionServices'])
 // Reload Application 
 .directive('crnaReloadApp', function() {
   return {
@@ -28,10 +28,10 @@ angular.module('navbarDirectives', ['lumx', 'positionServices'])
   return {
     restrict: 'A',
     transclude: true,
-    controller: ['LxDialogService',  function(LxDialogService) {
+    controller: [function() {
       var vm = this;
       vm.openPositionDialog = function() {
-        LxDialogService.open('position-dialog');
+        //LxDialogService.open('position-dialog');
       };
     }],
     controllerAs: 'choosePosition',
@@ -43,12 +43,12 @@ angular.module('navbarDirectives', ['lumx', 'positionServices'])
 .directive('crnaChoosePositionForm', function() {
   return {
     restrict: 'E',
-    controller: ['$scope', 'myPosition', 'LxDialogService', function($scope, myPosition, LxDialogService) {
+    controller: ['$scope', 'myPosition', function($scope, myPosition) {
       var vm = this;
       vm.my = {selectedPosition: angular.copy(myPosition.myPosition.name)};
 
       vm.closeDialog = function() {
-        LxDialogService.close('position-dialog');
+        //LxDialogService.close('position-dialog');
       };
 
       vm.saveAndCloseDialog = function() {
@@ -65,13 +65,13 @@ angular.module('navbarDirectives', ['lumx', 'positionServices'])
   return {
     restrict: 'A',
     transclude: true,
-    controller: ['LxDialogService', '$state', function(LxDialogService, $state) {
+    controller: ['$state', function($state) {
       var vm = this;
       vm.open = function() {
-        LxDialogService.open('help-dialog');
+        //LxDialogService.open('help-dialog');
       };
       vm.close = function() {
-        LxDialogService.close('help-dialog');
+        //LxDialogService.close('help-dialog');
       };
       vm.title = function() {
         return $state.current.name;
