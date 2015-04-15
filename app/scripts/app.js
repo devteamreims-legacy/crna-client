@@ -16,7 +16,6 @@ angular
     'ngSanitize',
     'ngTouch',
     'btford.socket-io',
-    'lumx',
     'crnaRoutes', // Angular-ui-router routes
     'position', // Position module
     'navbar', // Navbar
