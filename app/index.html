@@ -23,77 +23,22 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <md-toolbar layout="row">
+    <md-toolbar layout="row" layout-align="space-between center">
       <nav class="main-nav">
-        <ul>
-          <li><a ui-sref-active="active" class="main-nav__link" lx-ripple="blue-700" ui-sref='root'><crna-my-sectors/></a></li>
-          <li><a ui-sref-active="active" class="main-nav__link" lx-ripple="blue-700" ui-sref='xman'>XMAN</a></li>
-          <li><a ui-sref-active="active" class="main-nav__link" lx-ripple="blue-700" ui-sref='arcid'>ARCID</a></li>
-          <li><a ui-sref-active="active" class="main-nav__link" lx-ripple="blue-700" ui-sref='ctlroom'>SALLE</a></li>
-        </ul>
+        <md-button ui-sref-active="active" ui-sref='root'><crna-my-sectors/></md-button>
+        <md-button ui-sref-active="active" ui-sref='xman'>XMAN</md-button>
+        <md-button ui-sref-active="active" ui-sref='arcid'>ARCID</md-button>
+        <md-button ui-sref-active="active" ui-sref='ctlroom'>SALLE</md-button>
       </nav>
 
-      <nav class="main-nav-buttons">
-        <ul>
-          <li>
-              <button class="main-nav__link btn btn--flat" lx-ripple="blue-700" lx-dropdown-toggle>
-                <i class="icon mdi mdi-settings"></i>
-              </button>
-              
-              <lx-dropdown-menu>
-                <ul>
-                  <li><a crna-choose-position class="dropdown-link">Position</a></li>
-                  <li><a crna-reload-app class="dropdown-link">Recharger</a></li>
-                </ul>
-              </lx-dropdown-menu>
-            </lx-dropdown>
-          </li>
-          <li>
-            <button crna-help-button class="main-nav__link btn btn--flat" lx-ripple="blue-700">
-              <i class="icon mdi mdi-help"></i>
-            </button>
-          </li>
-        </ul>
+      <nav layout-align="right center" class="main-nav-buttons">
+        <md-button class="md-icon-button"><i class="mdi mdi-settings"></i></md-button>
+        <md-button class="md-icon-button"><i class="mdi mdi-help"></i></md-button>
+        <md-button class="md-icon-button"><i class="mdi mdi-refresh"></i></md-button>
       </nav>
     </md-toolbar>
 
-    <header class="header">
-      <nav class="main-nav">
-        <ul>
-          <li><a ui-sref-active="active" class="main-nav__link" lx-ripple="blue-700" ui-sref='root'><crna-my-sectors/></a></li>
-          <li><a ui-sref-active="active" class="main-nav__link" lx-ripple="blue-700" ui-sref='xman'>XMAN</a></li>
-          <li><a ui-sref-active="active" class="main-nav__link" lx-ripple="blue-700" ui-sref='arcid'>ARCID</a></li>
-          <li><a ui-sref-active="active" class="main-nav__link" lx-ripple="blue-700" ui-sref='ctlroom'>SALLE</a></li>
-        </ul>
-      </nav>
-
-      <nav class="main-nav-buttons">
-        <ul>
-          <li>
-            <lx-dropdown>
-              <button class="main-nav__link btn btn--flat" lx-ripple="blue-700" lx-dropdown-toggle>
-                <i class="icon mdi mdi-settings"></i>
-              </button>
-              
-              <lx-dropdown-menu>
-                <ul>
-                  <li><a crna-choose-position class="dropdown-link">Position</a></li>
-                  <li><a crna-reload-app class="dropdown-link">Recharger</a></li>
-                </ul>
-              </lx-dropdown-menu>
-            </lx-dropdown>
-          </li>
-          <li>
-            <button crna-help-button class="main-nav__link btn btn--flat" lx-ripple="blue-700">
-              <i class="icon mdi mdi-help"></i>
-            </button>
-          </li>
-        </ul>
-      </nav>
-              
-    </header>
-
-    <section class="main" ui-view>
+    <section class="row" ui-view>
     </section>
 
     <footer class="footer">

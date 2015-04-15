@@ -1,15 +1,15 @@
 // CRNA App settings
 
 // Header settings
-$header-background: $blue;
-$header-background-active: $blue-700;
-$header-height: 80px;
+//$header-background: $blue;
+//$header-background-active: $blue-700;
+//$header-height: 80px;
 
 // Global font size (everything else is rem, yay !)
 $app-font-zoom: 130%;
 
 
-
+/*
 .bgc-main-color {
   @extend .bgc-blue-500;
 }
@@ -69,8 +69,9 @@ $app-font-zoom: 130%;
     color: $red-100;
   }
 }
-
+*/
 /* Text mixins */
+/*
 @mixin text-muted($type: dark) {
   @if $type == dark {
     color: $black-2;
@@ -78,3 +79,4 @@ $app-font-zoom: 130%;
     color: $white-3;
   }
 }
+*/

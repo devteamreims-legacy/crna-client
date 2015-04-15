@@ -1,5 +1,5 @@
 ///*------------------------------------*\
-//    #MODULES-COMMON-LAYOUT
+//    #MODULES-COMMON-MAIN
 //\*------------------------------------*/
 
 html, body {
@@ -7,7 +7,4 @@ html, body {
   font-size: $app-font-zoom;
 }
 
-section.main {
-  margin-top: $header-height;
-  @include outer-container;
-}
+
