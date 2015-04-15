@@ -37,6 +37,8 @@ module.exports = function(config) {
       'bower_components/velocity/velocity.js',
       'bower_components/velocity/velocity.ui.js',
       'bower_components/lumx/dist/lumx.js',
+      'bower_components/angular-aria/angular-aria.js',
+      'bower_components/angular-material/angular-material.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
