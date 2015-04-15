@@ -29,32 +29,32 @@
 }
 
 .xman-row.speed-applied {
-//  @include success-background-color;
+  @include success-background-color;
 }
 
 .xman-row.speed-not-applied {
-//  @include danger-background-color;
+  @include danger-background-color;
 }
 
 .xman-row.correct-speed-applied {
-//  @include success-background-color;
+  @include success-background-color;
 }
 
 .xman-row.no-speed-to-apply {
-//  @include success-background-color;
+  @include success-background-color;
 }
 
 /* Delay */
 .xman-row .delay {
   text-align: center;
   .high-delay {
-//    @include danger-color;
+    @include danger-color;
   }
   .medium-delay {
-//    @include warning-color;
+    @include warning-color;
   }
   .low-delay {
-//    @include success-color;
+    @include success-color;
   }
 }
 
