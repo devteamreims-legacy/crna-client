@@ -16,5 +16,7 @@ angular.module('crnaClientApp')
     });
   $mdThemingProvider.theme('success-warning')
     .primaryPalette('green')
-    .accentPalette('deep-orange');
+    .accentPalette('orange', {
+      'default': '800'
+    });
 }]);
