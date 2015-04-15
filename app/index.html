@@ -9,18 +9,54 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/mdi/css/materialdesignicons.css" />
+    <link rel="stylesheet" href="bower_components/mdi/css/materialdesignicons.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="crnaClientApp">
+  <body layout="column" ng-app="crnaClientApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <md-toolbar layout="row">
+      <nav class="main-nav">
+        <ul>
+          <li><a ui-sref-active="active" class="main-nav__link" lx-ripple="blue-700" ui-sref='root'><crna-my-sectors/></a></li>
+          <li><a ui-sref-active="active" class="main-nav__link" lx-ripple="blue-700" ui-sref='xman'>XMAN</a></li>
+          <li><a ui-sref-active="active" class="main-nav__link" lx-ripple="blue-700" ui-sref='arcid'>ARCID</a></li>
+          <li><a ui-sref-active="active" class="main-nav__link" lx-ripple="blue-700" ui-sref='ctlroom'>SALLE</a></li>
+        </ul>
+      </nav>
+
+      <nav class="main-nav-buttons">
+        <ul>
+          <li>
+              <button class="main-nav__link btn btn--flat" lx-ripple="blue-700" lx-dropdown-toggle>
+                <i class="icon mdi mdi-settings"></i>
+              </button>
+              
+              <lx-dropdown-menu>
+                <ul>
+                  <li><a crna-choose-position class="dropdown-link">Position</a></li>
+                  <li><a crna-reload-app class="dropdown-link">Recharger</a></li>
+                </ul>
+              </lx-dropdown-menu>
+            </lx-dropdown>
+          </li>
+          <li>
+            <button crna-help-button class="main-nav__link btn btn--flat" lx-ripple="blue-700">
+              <i class="icon mdi mdi-help"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </md-toolbar>
+
     <header class="header">
       <nav class="main-nav">
         <ul>
