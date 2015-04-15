@@ -1,0 +1,33 @@
+<md-dialog flex>
+  <md-content>
+  <h2 class="md-title">Configuration position</h2>
+  <div layout="row" class="sticky-container"> 
+    <div flex="33" class="west">
+      <h3>Ouest</h3>
+      <md-radio-group ng-model="choosePositionDialog.my.selectedPosition">
+        <md-radio-button ng-repeat="p in [30, 31, 32, 33, 34, 35, 36, 37]" ng-value="p">Position {{p}}</md-radio-button>
+      </md-radio-group>
+    </div>
+    <div flex="33" class="east">
+      <h3>Est</h3>
+      <md-radio-group ng-model="choosePositionDialog.my.selectedPosition">
+        <md-radio-button ng-repeat="p in [20, 21, 22, 23, 24, 25, 26, 27]" ng-value="p">Position {{p}}</md-radio-button>
+      </md-radio-group>
+    </div>
+    <div flex="33" class="night">
+      <h3>Nuit</h3>
+      <md-radio-group ng-model="choosePositionDialog.my.selectedPosition">
+        <md-radio-button ng-repeat="p in [11, 12, 13, 14]" ng-value="p">Position {{p}}</md-radio-button>
+      </md-radio-group>
+    </div>
+  </div>
+  </md-content>
+  <div class="md-actions" layout="row">
+    <md-button type="button" class="md-accent md-icon-button" ng-click="choosePositionDialog.saveAndCloseDialog()" >
+      <i class="mdi mdi-check"></i>
+    </md-button>
+    <md-button type="button" class="md-warn md-icon-button" ng-click="choosePositionDialog.closeDialog()" >
+      <i class="mdi mdi-close"></i>
+    </md-button>
+  </div>
+</md-dialog>
