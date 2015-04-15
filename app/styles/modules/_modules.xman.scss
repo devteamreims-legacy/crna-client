@@ -18,13 +18,13 @@
     @include border-right-radius(2px);
   }
   &.selected {
-//    @extend .btn--green;
+    // use md-primary
   }
   &.proposed {
-//    @extend .btn--orange;
+    // use md-accent
   }
   &.undo {
-//    @extend .btn--red;
+    // Use md-warn here
   }
 }
 

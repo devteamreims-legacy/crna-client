@@ -106,7 +106,7 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
         var ret = '';
         
         if(flight.applied.minCleanSpeed === true) {
-          ret = 'selected';
+          ret = 'md-primary';
         }
         return ret;
       };
@@ -120,19 +120,19 @@ angular.module('xmanDirectives', ['crnaConstants', 'smart-table', 'angularMoment
 
         if (flight.applied.speed === undefined) { // Nothing has been applied yet
           if (buttonSpeed === flight.speed) {
-            def = 'proposed'; // Requested speed will show as primary
+            def = 'md-accent'; // Requested speed will show as primary
           }
         } else { // We have an applied speed reduction
           if (flight.speed === flight.applied.speed) { // Applied speed equals requested speed 
             if (buttonSpeed === flight.applied.speed) { // All is good, disable input
-              def = 'selected';
+              def = 'md-primary';
             }
           } else {
             if (buttonSpeed === flight.applied.speed) {
-              def = 'selected';
+              def = 'md-primary';
             }
             if (buttonSpeed === flight.speed) {
-              def = 'proposed';
+              def = 'md-accent';
             }
           }
         }
