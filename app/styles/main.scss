@@ -8,7 +8,11 @@
 // bower:scss
 @import "mdi/scss/_core.scss";
 @import "mdi/scss/materialdesignicons.scss";
+@import "bourbon/app/assets/stylesheets/_bourbon.scss";
 // endbower
+
+// Import material colors
+@import "modules/common/modules.common.materialcolors";
 
 // Import globals
 @import "settings";
@@ -19,7 +23,6 @@
 //@import "modules/help/modules.help.helpdialog";
 
 // Import custom styling 
-//@import "modules/modules.navbar";
-//@import "modules/modules.xman";
+@import "modules/modules.xman";
 //@import "modules/modules.arcid";
 
