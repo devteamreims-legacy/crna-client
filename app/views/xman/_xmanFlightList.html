@@ -1,13 +1,15 @@
-<div layout="row" class="xman-row-title">
+<div layout="row" layout-padding class="xman-row-title">
   <div flex="20" class="callsign">Callsign</div>
   <div flex="10" class="delay">Delay</div>
   <div flex="50" class="speeds">Speed</div>
   <div flex="20" class="applied">Applied</div>
 </div>
-
-<div layout="row" layout-align="start center" class="xman-row" ng-class="getRowClass(flight)" ng-repeat="flight in x.xmanData track by flight.flightId">
-  <div flex="20" class="callsign">{{flight.callsign}}</div>
+<md-divider></md-divider>
+<div layout="row" layout-padding layout-align="start center" class="xman-row" ng-class="getRowClass(flight)" ng-repeat-start="flight in x.xmanData track by flight.flightId">
+  <div flex="20" class="callsign"><h3 class="md-title">{{flight.callsign}}</h3></div>
   <div flex="10" class="delay"><xman-delay flight="flight" /></div>
   <div flex="50" class="speeds"><xman-speed flight="flight" /></div>
   <div flex="20" class="applied"><xman-applied-by flight="flight" /></div>
 </div>
+<md-divider ng-repeat-end></md-divider>
+
