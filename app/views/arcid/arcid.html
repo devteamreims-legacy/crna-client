@@ -1,3 +1,16 @@
+<md-content layout-padding ng-init="arcidSearch = ''">
+  <md-autocomplete 
+    md-selected-item="arcidSearchFlight"
+    md-search-text="arcidSearch"
+    md-items="f in arcid.flightList"
+    placeholder="Callsign"
+    md-menu-class="arcid-search-menu"
+    md-selected-item-change="addDisplayedFlight(f)"
+    md-item-text="f.callsign">
+    <span md-highlight-text="arcidSearch" md-highlight-flags="gi">{{f.callsign}}</span>
+  </md-autocomplete>
+</md-content>
+
 <div class="row">
   <div id="arcid-left-col" class="col-md-3 col-sm-4">
     <div class="form-group has-feedback">
