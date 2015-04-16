@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body layout="row" ng-app="crnaClientApp">
+  <body layout="row" layout-fill ng-app="crnaClientApp">
     <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
       <md-toolbar layout="row" layout-padding>
         <h1 class="md-toolbar-tools"><a ui-sref='root' crna-sector-position></a></h1>
@@ -38,7 +38,7 @@
       </md-content>
     </md-sidenav>
 
-    <div layout="column" tabIndex="-1" role="main" flex>
+    <div layout="column" layout-fill tabIndex="-1" role="main" flex>
       <md-toolbar layout="row" layout-padding>
         <md-button class="md-icon-button" hide-gt-sm aria-label="Toggle Menu">
           <i class="mdi mdi-menu"></i>
@@ -54,8 +54,8 @@
           </div>
         </div>
       </md-toolbar>
-      <md-content md-scroll-y flex>        
-        <div flex ui-view></div>
+      <md-content md-scroll-y layout-fill flex>
+        <md-content layout-fill ui-view flex></md-content>
         <footer flex layout="column" layout-align="center">
           <p flex style="text-align: center;">Un bug ? Un soucis ? devteamlfee AT gmail.com</p>
         </footer>
