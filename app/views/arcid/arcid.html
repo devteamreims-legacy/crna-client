@@ -1,31 +1,17 @@
-<md-content layout-padding ng-init="arcidSearch = ''">
-  <md-autocomplete 
-    md-selected-item="arcidSearchFlight"
-    md-search-text="arcidSearch"
-    md-items="f in arcid.flightList"
-    placeholder="Callsign"
-    md-menu-class="arcid-search-menu"
-    md-selected-item-change="addDisplayedFlight(f)"
-    md-item-text="f.callsign">
-    <span md-highlight-text="arcidSearch" md-highlight-flags="gi">{{f.callsign}}</span>
-  </md-autocomplete>
-</md-content>
-
-<div class="row">
-  <div id="arcid-left-col" class="col-md-3 col-sm-4">
-    <div class="form-group has-feedback">
-      <div class="input-group">
-        <input type="text" style="text-transform: uppercase;" class="form-control" placeHolder="Callsign" />
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
-        </span>
-      </div>
-    </div>
-    <div class="btn-group-vertical" style="width: 100%;" role="group">
-      <button class="btn btn-sm btn-default" style="text-align: left;" ng-click="addDisplayedFlight(f)" ng-repeat="f in arcid.flightList | limitTo:7">{{f.callsign}}</button>
-    </div>
-  </div>
-  <div id="arcid-right-col" class="col-md-9 col-sm-8">
+<md-content flex layout-fill layout="row">
+  <md-content layout-fill flex="33" flex-gt-md="20" layout-padding ng-init="arcidSearch = ''">
+    <md-autocomplete 
+      md-selected-item="arcidSearchFlight"
+      md-search-text="arcidSearch"
+      md-items="f in arcid.flightList"
+      placeholder="Callsign"
+      md-menu-class="arcid-search-menu"
+      md-selected-item-change="addDisplayedFlight(f)"
+      md-item-text="f.callsign">
+      <span md-highlight-text="arcidSearch" md-highlight-flags="gi">{{f.callsign}}</span>
+    </md-autocomplete>
+  </md-content>
+  <md-content offset="5" flex layout-padding>
     <arcid-flight-panel ng-repeat="f in arcid.displayedFlights" />
-  </div>
-</div>
+  </md-content>
+</md-content>
