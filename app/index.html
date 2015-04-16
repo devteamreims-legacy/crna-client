@@ -20,7 +20,7 @@
   <body layout="row" ng-app="crnaClientApp">
     <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
       <md-toolbar layout="row" layout-padding>
-        <h1 class="md-toolbar-tools"><crna-my-sectors/></h1>
+        <h1 class="md-toolbar-tools"><a ui-sref='root' crna-sector-position></a></h1>
       </md-toolbar>
       <md-content flex layout="column" role="navigation">
         <md-button ui-sref-active="md-primary md-focused active" ui-sref='xman'>

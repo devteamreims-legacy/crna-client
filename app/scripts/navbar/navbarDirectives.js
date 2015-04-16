@@ -7,7 +7,20 @@
  * # navbarDirectives
  * Directives for xman
  **/
-angular.module('navbarDirectives', ['positionServices'])
+angular.module('navbarDirectives', ['positionServices', 'sectorServices', 'sectorFilters'])
+// Sector + Position
+.directive('crnaSectorPosition', function() {
+  return {
+    restrict: 'A',
+    controller: ['myPosition', 'mySectors', function(myPosition, mySectors) {
+      var vm = this;
+      vm.myPosition = myPosition.myPosition;
+      vm.mySectors = mySectors.mySectors;
+    }],
+    controllerAs: 'p',
+    template: '{{p.mySectors | sectorsToString}} - {{p.myPosition.name}}'
+  };
+})
 // Reload Application 
 .directive('crnaReloadApp', function() {
   return {
