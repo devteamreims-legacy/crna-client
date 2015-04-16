@@ -22,41 +22,19 @@
       <md-toolbar layout="row" layout-padding>
         <h1 class="md-toolbar-tools"><crna-my-sectors/></h1>
       </md-toolbar>
-      <md-content flex role="navigation">
-        <md-list>
-          <md-item>
-            <md-item-content>
-              <md-button ui-sref-active="md-primary" aria-label="Sector Status" ui-sref='root'>
-                <i class="mdi mdi-help face"></i>
-                <crna-my-sectors/>
-              </md-button>
-            </md-item-content>
-          </md-item>
-          <md-item>
-            <md-item-content>
-              <md-button ui-sref-active="md-primary" ui-sref='xman'>
-                <i class="warning mdi mdi-help md-avatar"></i>
-                XMAN
-              </md-button>
-            </md-item-content>
-          </md-item>
-          <md-item>
-            <md-item-content>
-              <md-button ui-sref-active="md-primary" ui-sref='arcid'>
-                <i class="danger mdi mdi-help md-avatar"></i>
-                ARCID
-              </md-button>
-            </md-item-content>
-          </md-item>
-          <md-item>
-            <md-item-content>
-              <md-button ui-sref-active="md-primary" ui-sref='ctlroom'>
-                <i class="success mdi mdi-help md-avatar"></i>
-                Salle 
-              </md-button>
-            </md-item-content>
-          </md-item>
-        </md-list>
+      <md-content flex layout="column" role="navigation">
+        <md-button ui-sref-active="md-primary active" ui-sref='xman'>
+          <i class="warning mdi mdi-help md-avatar"></i>
+          XMAN
+        </md-button>
+        <md-button ui-sref-active="md-primary active" ui-sref='arcid'>
+          <i class="danger mdi mdi-help md-avatar"></i>
+          ARCID
+        </md-button>
+        <md-button ui-sref-active="md-primary active" ui-sref='ctlroom'>
+          <i class="success mdi mdi-help md-avatar"></i>
+          Salle 
+        </md-button>
       </md-content>
     </md-sidenav>
 
@@ -76,13 +54,13 @@
           </div>
         </div>
       </md-toolbar>
-      <md-content md-scroll-y flex ui-view layout-padding></md-content>
-        
-<!--
-      <footer layout="row">
-        <p>Un bug ? Un soucis ? devteamlfee AT gmail.com</p>
-      </footer>
--->
+      <md-content md-scroll-y flex layout-padding>        
+        <div flex ui-view></div>
+        <footer layout="row">
+          <p>Un bug ? Un soucis ? devteamlfee AT gmail.com</p>
+        </footer>
+      </md-content>
+
     </div>
 
     <!-- build:js(.) scripts/vendor.js -->
