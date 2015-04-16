@@ -51,6 +51,7 @@ angular.module('navbarDirectives', ['positionServices'])
             };
           }],
           controllerAs: 'choosePositionDialog',
+          clickOutsideToClose: true
         });
       };
     }],
@@ -75,7 +76,8 @@ angular.module('navbarDirectives', ['positionServices'])
           locals: {
             title: vm.title(),
             subTemplateUrl: vm.subTemplateUrl()
-          }
+          },
+          clickOutsideToClose: true
         });
       };
       vm.close = function() {
