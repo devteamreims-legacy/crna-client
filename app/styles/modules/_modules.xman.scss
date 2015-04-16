@@ -3,14 +3,14 @@
   @include transition(background-color 0.5s $ease-out-cubic, color 0.5s $ease-out-cubic);
   margin: 0;
   min-width: 0;
-/*  
+  
   &:first-of-type {
-    @include border-left-radius(2px);
+    @include border-left-radius(rem(2px));
   }
   &:last-of-type {
-    @include border-right-radius(2px);
+    @include border-right-radius(rem(2px));
   }
-*/
+
   &.selected {
     // use md-primary
   }
@@ -53,6 +53,10 @@
 
 /* Applied by */
 .xman-row .applied {
+  .md-list-item-text {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   .applied-by-main {
   }
   .applied-by-meta {
