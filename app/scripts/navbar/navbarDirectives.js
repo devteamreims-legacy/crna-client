@@ -78,7 +78,7 @@ angular.module('navbarDirectives', ['positionServices', 'sectorServices', 'secto
     transclude: true,
     controller: ['$mdDialog', '$state', function($mdDialog, $state) {
       var vm = this;
-      vm.open = function($event) {
+      vm.openHelpDialog = function($event) {
         var parentEl = angular.element(document.body);
         $mdDialog.show({
           parent: parentEl,
@@ -105,7 +105,7 @@ angular.module('navbarDirectives', ['positionServices', 'sectorServices', 'secto
 
     }],
     controllerAs: 'helpDialog',
-    template: '<span ng-click="helpDialog.open()" ng-transclude></span>'
+    template: '<span ng-click="helpDialog.openHelpDialog($event)" ng-transclude></span>'
   };  
 })
 .controller('HelpDialogController', ['title', 'subTemplateUrl', function(title, subTemplateUrl) {
