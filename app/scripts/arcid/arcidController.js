@@ -14,6 +14,9 @@ angular.module('arcidController', ['crnaConstants', 'arcidDirectives', 'arcidSer
   arcid.displayedFlights = [];
 
   $scope.addDisplayedFlight = function(f) {
+    if(f === undefined) {
+      return;
+    }
     arcid.displayedFlights = _.without(arcid.displayedFlights, f); // Remove if already present
     arcid.displayedFlights.unshift(f);
     arcid.displayedFlights = arcid.displayedFlights.slice(0, 4); // Keep 4 elements only
