@@ -10,10 +10,10 @@
 angular.module('sectorDirectives', [])
 .directive('crnaMySectors', function() {
   return {
-    restrict: 'EA',
+    restrict: 'E',
     controller: 'SectorController', // Link to Sector Controller
     controllerAs: 's',
-    template: '<span ng-bind="s.mySectors | sectorsToString"></span>' // Use toString filter to reduce sector array to a readable string
+    template: '{{s.mySectors | sectorsToString}}' // Use toString filter to reduce sector array to a readable string
   };
 });
 

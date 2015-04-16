@@ -10,9 +10,9 @@
 angular.module('positionDirectives', [])
 .directive('crnaMyPosition', function() {
   return {
-    restrict: 'EA',
+    restrict: 'E',
     controller: 'PositionController', // Link to Position Controller
     controllerAs: 'p',
-    template: '<span ng-bind="p.myPosition.name"></span>'
+    template: '{{p.myPosition.name}}'
   };
 });
