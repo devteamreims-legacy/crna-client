@@ -1,2 +1,8 @@
-<p class="applied-by-main">{{flight.applied.sectors | sectorsToString}}</p>
-<p class="applied-by-meta" am-time-ago="flight.applied.when"></p>
+<md-list>
+  <md-list-item class="md-2-line">
+    <div class="md-list-item-text">
+      <h3 class="applied-by-main">{{flight.applied.sectors | sectorsToString}}</h3>
+      <p class="applied-by-meta" am-time-ago="flight.applied.when"></p>
+    </div>
+  </md-list-item>
+</md-list>

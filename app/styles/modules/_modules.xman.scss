@@ -1,6 +1,8 @@
 /* Speeds and speed buttons */
-.xman-row .speeds .speed-buttons > button {
+.xman-row .speeds button.md-button {
   @include transition(background-color 0.5s $ease-out-cubic, color 0.5s $ease-out-cubic);
+  margin: 0;
+  min-width: 0;
 /*  
   &:first-of-type {
     @include border-left-radius(2px);
