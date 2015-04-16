@@ -1,10 +1,11 @@
 <md-content flex layout-fill layout="row">
-  <md-content layout-fill flex="33" flex-gt-md="20" layout-padding ng-init="arcidSearch = ''">
+  <md-content layout-fill flex="40" flex-gt-md="20" layout="row" layout-align="start end" layout-padding ng-init="arcidSearch = ''">
+    <md-button class="md-icon-button"><i class="mdi mdi-help"></i></md-button>
     <md-autocomplete 
       md-selected-item="arcidSearchFlight"
       md-search-text="arcidSearch"
       md-items="f in arcid.flightList"
-      placeholder="Callsign"
+      md-floating-label="Callsign"
       md-menu-class="arcid-search-menu"
       md-selected-item-change="addDisplayedFlight(f)"
       md-item-text="f.callsign">
