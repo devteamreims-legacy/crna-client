@@ -1,0 +1,25 @@
+/* Left navbar styling */
+.md-sidenav-left {}
+
+.md-sidenav-left .md-button {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  text-align: left;
+  font-weight: 500;
+  color: inherit;
+
+  &.active {
+    color: $light-blue-500;
+  }
+
+  .success {
+    @include success-color;
+  }
+  .warning {
+    @include warning-color;
+  }
+  .danger {
+    @include danger-color;
+  }
+}
