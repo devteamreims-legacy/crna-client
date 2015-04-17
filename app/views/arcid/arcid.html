@@ -1,5 +1,5 @@
 <md-content flex layout="row">
-  <md-content flex="40" flex-gt-md="20" class="md-whiteframe-z2" ng-init="arcidSearch = ''">
+  <md-content flex="40" flex-gt-md="20" class="arcid-leftbar md-whiteframe-z2" ng-init="arcidSearch = ''">
     <div layout-padding ng-init="arcidSearch = ''">
       <md-input-container>
         <label>Callsign</label>
@@ -18,14 +18,19 @@
       </md-input-container>
     </div>
     <md-divider></md-divider>
-    <md-content layout="column" layout-align="start center" flex class="md-scroll-y" class="arcid-history">
-      <md-button ng-click="addDisplayedFlight(f)" ng-repeat="f in arcid.flightList | limitTo: 7">
-        <span class="arcid-search-callsign">{{f.callsign}}</span><br />
-        <span class="arcid-search-meta">{{f.departure}} - {{f.destination}}</span>
-      </md-button>
+    <md-content class="arcid-results">
+      <md-list-item class="md-2-line" ng-click="addDisplayedFlight(f)" ng-repeat="f in arcid.flightList|filter:{callsign: arcidSearch}|limitTo: 7">
+        <!-- <md-button class="md-list-item-text" ng-click="addDisplayedFlight(f)"> -->
+        <div class="md-list-item-text">
+          <h3 md-highlight-text="arcidSearch" md-highlight-flags="i" class="arcid-search-callsign">{{f.callsign}}</h3>          
+          <p class="arcid-search-meta">{{f.departure}} - {{f.destination}}</p>
+        </div>
+        <!-- </md-button> -->
+        <md-divider flex ng-repeat-end></md-divider>
+      </md-list-item>
     </md-content>
   </md-content>
-  <md-content offset="5" flex layout-padding>
+  <md-content class="arcid-panels" offset="5" flex layout-padding>
     <arcid-flight-panel ng-repeat="f in arcid.displayedFlights" />
   </md-content>
 </md-content>
