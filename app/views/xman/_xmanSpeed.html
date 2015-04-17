@@ -5,7 +5,7 @@
 <md-button ng-disabled="{{(flight.speed === '0')}}" class="md-raised" ng-class="mcsClass(flight)" ng-click="toggleMcs(flight)">
   MCS
 </md-button>
-<md-button class="warn md-warn md-raised undo" aria-label="undo" ng-disabled="{{(flight.speed === '0')}}" ng-click="undoSpeed(flight)" >
+<md-button class="md-raised undo" aria-label="undo" ng-class="{'md-warn': (flight.speed !== '0')}" ng-disabled="{{(flight.speed === '0')}}" ng-click="undoSpeed(flight)" >
   <i class="mdi mdi-undo"></i>
 </md-button>
 </span>
