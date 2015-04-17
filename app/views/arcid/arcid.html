@@ -20,17 +20,15 @@
     <md-divider></md-divider>
     <md-content class="arcid-results">
       <md-list-item class="md-2-line" ng-click="addDisplayedFlight(f)" ng-repeat="f in arcid.flightList|filter:{callsign: arcidSearch}|limitTo: 7">
-        <!-- <md-button class="md-list-item-text" ng-click="addDisplayedFlight(f)"> -->
         <div class="md-list-item-text">
           <h3 md-highlight-text="arcidSearch" md-highlight-flags="i" class="arcid-search-callsign">{{f.callsign}}</h3>          
           <p class="arcid-search-meta">{{f.departure}} - {{f.destination}}</p>
         </div>
-        <!-- </md-button> -->
         <md-divider flex ng-repeat-end></md-divider>
       </md-list-item>
     </md-content>
   </md-content>
-  <md-content class="arcid-panels" offset="5" flex layout-padding>
+  <md-content class="arcid-panels" layout="column" flex layout-margin>
     <arcid-flight-panel ng-repeat="f in arcid.displayedFlights" />
   </md-content>
 </md-content>
