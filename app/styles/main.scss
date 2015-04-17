@@ -5,6 +5,8 @@
 @import "mdi/scss/_icons.scss";
 @import "mdi/scss/_path.scss";
 
+@import "settings.animate.scss";
+
 // bower:scss
 @import "mdi/scss/_core.scss";
 @import "mdi/scss/materialdesignicons.scss";
@@ -21,6 +23,7 @@
 @import "modules/common/modules.common.typography";
 @import "modules/common/modules.common.sidenav-left";
 @import "modules/common/modules.common.buttons";
+@import "modules/common/modules.common.animation";
 
 // Import custom styling 
 @import "modules/modules.xman";

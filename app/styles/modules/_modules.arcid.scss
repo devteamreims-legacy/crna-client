@@ -1,10 +1,35 @@
 /* ARCID Styling */
 
+.arcid-main {
+  position: absolute;
+  height: 100%;
+}
+
+.arcid-leftbar {
+  min-height: 100%;
+}
+
 .arcid-leftbar .arcid-results {
+  .arcid-list-item.ng-enter, .arcid-list-item.ng-move, .arcid-list-item.ng-leave {
+    @include transition(all $base-duration $base-timing-function-in-out);
+    overflow-y: hidden;
+  }
+  
+  .arcid-list-item.ng-enter, .arcid-list-item.ng-move, .arcid-list-item.ng-leave.ng-leave-active {
+    max-height: 0;
+  }
+
+  .arcid-list-item.ng-enter.ng-enter-active, .arcid-list-item.ng-move.ng-move-active, .arcid-list-item.ng-leave {
+    max-height: 400px;
+  }
+
   .arcid-search-callsign {
     .highlight {
       color: $blue-500;
     }
   }
+}
+
+.arcid-panels {
 
 }

@@ -1,4 +1,4 @@
-<md-content flex layout="row">
+<md-content class="arcid-main" layout="row" flex layout-fill>
   <md-content flex="40" flex-gt-md="20" class="arcid-leftbar md-whiteframe-z2" ng-init="arcidSearch = ''">
     <div layout-padding ng-init="arcidSearch = ''">
       <md-input-container>
@@ -19,7 +19,7 @@
     </div>
     <md-divider></md-divider>
     <md-content class="arcid-results">
-      <md-list-item class="md-2-line" ng-click="addDisplayedFlight(f)" ng-repeat="f in arcid.flightList|filter:{callsign: arcidSearch}|limitTo: 7">
+      <md-list-item class="md-2-line arcid-list-item" ng-click="addDisplayedFlight(f)" ng-repeat="f in arcid.flightList|filter:{callsign: arcidSearch}|limitTo: 7">
         <div class="md-list-item-text">
           <h3 md-highlight-text="arcidSearch" md-highlight-flags="i" class="arcid-search-callsign">{{f.callsign}}</h3>          
           <p class="arcid-search-meta">{{f.departure}} - {{f.destination}}</p>
