@@ -31,5 +31,15 @@
 }
 
 .arcid-panels {
-
+  arcid-flight-panel {
+    &.ng-enter, &.ng-move, &.ng-leave {
+      @include transition(all $base-duration $base-timing-function-in-out);
+    }
+    &.ng-enter, &.ng-move, &.ng-leave.ng-leave-active {
+      max-height: 0;
+    }
+    &.ng-enter.ng-enter-active, &.ng-move.ng-move-active, &.ng-leave {
+      max-height: 400px; // Some large value
+    }
+  }
 }
