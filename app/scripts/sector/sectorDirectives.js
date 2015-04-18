@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name positionDirectives
+ * @name sectorDirectives
  * @description
- * # positionDirective
- * Directives to manage our position
+ * # sectorDirective
+ * Directives to manage our sector
  **/
 angular.module('sectorDirectives', [])
 .directive('crnaMySectors', function() {
