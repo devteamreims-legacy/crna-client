@@ -24,5 +24,6 @@ angular
     'xman', // Xman
     'arcid', // arcid
     'eap', // Extended ATC Planner
+    'trafficLoad', // Traffic load
     'commonControllers' // Controllers communs
 ]);
