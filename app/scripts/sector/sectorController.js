@@ -7,14 +7,13 @@
  * # sectorController
  * Controller of the crnaClientApp
  */
-angular.module('sectorController', ['sectorServices', 'sectorFilters', 'sectorDirectives', 'trafficLoadServices'])
+angular.module('sectorController', ['sectorServices', 'sectorFilters', 'sectorDirectives', 'trafficLoadDirectives'])
 .controller('SectorController', ['$scope', 'mySectors', function ($scope, mySectors) {
   var vm = this;
   vm.mySectors = mySectors.mySectors;
 }])
-.controller('MySectorStatusController', ['$scope', 'mySectors', 'myPosition', 'myTrafficLoad', function($scope, mySectors, myPosition, myTrafficLoad) {
+.controller('MySectorStatusController', ['$scope', 'mySectors', 'myPosition', function($scope, mySectors, myPosition) {
   var vm = this;
   vm.mySectors = mySectors.mySectors;
   vm.myPosition = myPosition.myPosition;
-  $scope.myTrafficLoad = new myTrafficLoad().myLoad;
 }]);

@@ -36,13 +36,24 @@ angular.module('trafficLoadServices', ['sectorServices', 'underscore'])
 
 }])
 .factory('myTrafficLoad', ['mySectors', 'singleTrafficLoad', function(mySectors, singleTrafficLoad) {
+  var myLoad = [];
   
-  function myLoad() {
-    this.myLoad = [];
-    for(var i = 0;i < mySectors.mySectors.length;i++) {
-      this.myLoad.push(singleTrafficLoad.build({sector: mySectors.mySectors[i]}));
+  var service = {
+    getLoad: getLoad
+  };
+
+  function loadLoad() {
+    myLoad = [];
+    for(var i = 0; i < mySectors.mySectors.length;i++) {
+      myLoad.push(singleTrafficLoad.build({sector: mySectors.mySectors[i]}));
     }
   }
 
-  return myLoad;
+  function getLoad() {
+    return myLoad;
+  }
+
+  loadLoad();
+
+  return service;
 }]);
