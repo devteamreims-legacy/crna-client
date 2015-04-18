@@ -12,11 +12,12 @@ angular.module('trafficLoadServices', ['sectorServices', 'underscore', 'crnaCons
 .factory('singleTrafficLoad', [function() {
   // Constructor
   function SingleTrafficLoad(sector) {
+    /* Expects a string */
     this.sector = sector;
     this.load = [];
     // Load random values
     // Range : Now - 5 minutes -> Now + 30 minutes
-    for(var i = -5;i <= 30; i++) {
+    for(var i = -5;i <= 90; i++) {
       var _load = {
         when: Date.now() + i*60*1000,
         total: Math.floor((Math.random() * 20) + 1)
@@ -81,11 +82,19 @@ function distributedTrafficLoad(mySectors, singleTrafficLoad, crnaSectors) {
   };
 
   var distribution = [];
-  function getDistribution(sector) {
-    var childs = _.find(crnaSectors, function(i) { return i.name === sector });
-    if(childs === undefined) {
-      return distribution; // We have an atomic sector, return empty distribution
+  function getDistribution(data) {
+    if(data === undefined || data.sector === undefined) {
+      return distribution;
     }
+    var c = _.find(crnaSectors, function(i) { return i.name === data.sector });
+    if(c === undefined || c.children === undefined || c.children.length === 0) {
+      // We have an atomic sector, return a single load object
+      return [singleTrafficLoad.build({sector: data.sector})];
+    }
+    _.each(c.children, function(d) {
+      distribution.push(singleTrafficLoad.build({sector: d}));
+    });
+
     return distribution;
   }
 

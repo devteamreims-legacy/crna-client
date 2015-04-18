@@ -9,33 +9,39 @@
  **/
 angular
   .module('trafficLoadDirectives', ['trafficLoadServices', 'nvd3', 'underscore'])
-  .directive('trafficLoadChart', myTrafficLoadChart)
-  .directive('trafficDistributionChart', myTrafficDistributionChart);
+  .directive('trafficLoadChart', trafficLoadChart)
+  .directive('trafficDistributionChart', trafficDistributionChart);
 
 /* Directive */
-function myTrafficLoadChart() {
+function trafficLoadChart() {
   return {
     restrict: 'E',
     controller: myTrafficLoadChartController,
     controllerAs: 'vm',
+    scope: {
+      sector: '=chartSector',
+    },
     template: '<nvd3 options="vm.chart.options" data="vm.chart.data"></nvd3>'
   };
 }
 
-function myTrafficDistributionChart() {
+function trafficDistributionChart() {
   return {
     restrict: 'E',
     controller: myTrafficDistributionChartController,
     controllerAs: 'vm',
+    scope: {
+      sector: '=chartSector'
+    },
     template: '<nvd3 options="vm.chart.options" data="vm.chart.data"></nvd3>'
   };
 }
 
 /* Directive controller dep injection */
-myTrafficLoadChartController.$inject = ['myTrafficLoad', '_'];
+myTrafficLoadChartController.$inject = ['$scope', 'myTrafficLoad', '_'];
 
 /* Directive controller */
-function myTrafficLoadChartController(myTrafficLoad, _) {
+function myTrafficLoadChartController($scope, myTrafficLoad, _) {
   var vm = this;
   vm.chart = {};
   vm.chart.options = {};
@@ -43,6 +49,9 @@ function myTrafficLoadChartController(myTrafficLoad, _) {
     type: 'lineChart',
     height: 450,
     transitionDuration: 300,
+    useInteractiveGuideline: true,
+    x: function(d) { return d.when; },
+    y: function(d) { return d.total; },
     xAxis: {
       tickFormat: function(d) {
         return d3.time.format('%H:%M')(new Date(d));
@@ -57,28 +66,26 @@ function myTrafficLoadChartController(myTrafficLoad, _) {
   
   /* Load traffic load */
   var tl = myTrafficLoad.getLoad();
-  var load = tl.load.map(function(d) {
-    return {
-      x: d.when,
-      y: d.total
-    };
-  });
 
-  vm.chart.data = [{area: true, key: tl.sector[0], values: load}];
+  vm.chart.data = [{key: tl.sector, values: tl.load}];
 }
 
 /* Traffic distribution chart */
-myTrafficDistributionChartController.$inject = ['myTrafficLoad', '_'];
-function myTrafficDistributionChartController(myTrafficLoad, _) {
+myTrafficDistributionChartController.$inject = ['$scope', 'myTrafficLoad', '_'];
+function myTrafficDistributionChartController($scope, myTrafficLoad, _) {
   var vm = this;
   vm.chart = {};
   vm.chart.options = {};
   vm.chart.data = {};
 
   vm.chart.options.chart = {
-    type: 'areaChart',
+    type: 'stackedAreaChart',
     height: 450,
+    style: 'expand',
+    showControls: false,
     transitionDuration: 300,
+    x: function(d) { return d.when; },
+    y: function(d) { return d.total; },
     xAxis: {
       tickFormat: function(d) {
         return d3.time.format('%H:%M')(new Date(d));
@@ -86,12 +93,19 @@ function myTrafficDistributionChartController(myTrafficLoad, _) {
     },
     yAxis: {
       tickFormat: function(d) {
-        return d3.format('.0%')(d);
+        return d3.format('d')(d);
       }
     }
   };
 
-  vm.chart.data = myTrafficLoad.getDistribution();
+  var dis = myTrafficLoad.getDistribution();
 
+  var data = [];
 
+  _.each(dis, function(d) {
+    data.push({key: d.sector, values: d.load});
+  });
+  
+  vm.chart.data = data; 
+   
 }

@@ -15,7 +15,8 @@ angular.module('sectorServices', ['mainWebSocket', 'crnaConstants', 'underscore'
   return {
     mySectors: mySectors,
     allSectors: allSectors,
-    reduced: allSectors.reduceSector(mySectors)
+    reduced: allSectors.reduceSector(mySectors).join(''),
+    reducedA: allSectors.reduceSector(mySectors)
   };
 }])
 .factory('allSectors', ['crnaSectors', 'crnaAtomicSectors', '_', function(crnaSectors, crnaAtomicSectors, _) {
