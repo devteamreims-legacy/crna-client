@@ -1,6 +1,12 @@
-<h2>Status of my sector !</h2>
-<div><traffic-load-chart></traffic-load-chart></div>
-<div><traffic-distribution-chart></traffic-distribution-chart></div>
-<div class="col-md-4">
-    <eap-messages />
+<div layout-padding flex>
+  <md-content layout="row" flex>
+    <span flex></span>
+    <select placeholder="Secteur" ng-model="chartSector">
+      <option value="4N">4N</md-option>
+      <option value="5R">5R</md-option>
+      <option value="KD2F">KD2F</md-option>
+    </select>
+  </md-content>
+  <div><traffic-load-chart></traffic-load-chart></div>
+  <md-content><traffic-distribution-chart></traffic-distribution-chart></md-content>
 </div>
