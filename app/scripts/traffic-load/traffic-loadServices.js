@@ -36,6 +36,7 @@ angular.module('trafficLoadServices', ['sectorServices', 'underscore', 'crnaCons
   return SingleTrafficLoad;
 
 }])
+.factory('trafficLoadAndDistribution', trafficLoadAndDistribution)
 .factory('distributedTrafficLoad', distributedTrafficLoad)
 .factory('myTrafficLoad', myTrafficLoad);
 
@@ -72,21 +73,47 @@ function myTrafficLoad(mySectors, singleTrafficLoad, distributedTrafficLoad) {
 }
 
 /*
+ * trafficLoadAndDistribution
+ * Traffic load and distribution on a specific sector/group of sectors
+ * Defaults to mySectors if no parameters passed
+ */
+
+trafficLoadAndDistribution.$inject = ['mySectors', 'singleTrafficLoad', 'distributedTrafficLoad'];
+function trafficLoadAndDistribution(mySectors, singleTrafficLoad, distributedTrafficLoad) {
+  var service = {
+    getLoad: getLoad,
+    getDistribution: getDistribution
+  };
+  
+  function getLoad(sector) {
+    sector = typeof sector !== 'undefined' ? sector : mySectors.reduced;
+    return singleTrafficLoad.build({sector: sector});
+  }
+  
+  function getDistribution(sector) {
+    sector = typeof sector !== 'undefined' ? sector : mySectors.reduced;
+    return distributedTrafficLoad.getDistribution({sector: sector});
+  }
+
+  return service;
+}
+
+/*
  * distributedTrafficLoad
  * Get distribution of traffic load on a given group of sectors
  */
 distributedTrafficLoad.$inject = ['mySectors', 'singleTrafficLoad', 'crnaSectors', '_'];
-function distributedTrafficLoad(mySectors, singleTrafficLoad, crnaSectors) {
+function distributedTrafficLoad(mySectors, singleTrafficLoad, crnaSectors, _) {
   var service = {
     getDistribution: getDistribution
   };
 
-  var distribution = [];
   function getDistribution(data) {
+    var distribution = [];
     if(data === undefined || data.sector === undefined) {
       return distribution;
     }
-    var c = _.find(crnaSectors, function(i) { return i.name === data.sector });
+    var c = _.find(crnaSectors, function(i) { return i.name === data.sector; });
     if(c === undefined || c.children === undefined || c.children.length === 0) {
       // We have an atomic sector, return a single load object
       return [singleTrafficLoad.build({sector: data.sector})];

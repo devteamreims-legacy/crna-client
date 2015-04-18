@@ -1,12 +1,12 @@
 <div layout-padding flex>
   <md-content layout="row" flex>
     <span flex></span>
-    <select placeholder="Secteur" ng-model="chartSector">
-      <option value="4N">4N</md-option>
-      <option value="5R">5R</md-option>
-      <option value="KD2F">KD2F</md-option>
+    <select ng-model="chartSector">
+      <option value="4N">4N</option>
+      <option value="5R">5R</option>
+      <option value="KD2F">KD2F</option>
     </select>
   </md-content>
-  <div><traffic-load-chart></traffic-load-chart></div>
-  <md-content><traffic-distribution-chart></traffic-distribution-chart></md-content>
+  <md-content layout-margin><traffic-load-chart sector="chartSector"></traffic-load-chart></md-content>
+  <md-content layout-margin><traffic-distribution-chart sector="chartSector"></traffic-distribution-chart></md-content>
 </div>
