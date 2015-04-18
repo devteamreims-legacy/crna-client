@@ -8,7 +8,7 @@
  * Services managing traffic load
  */
 
-angular.module('trafficLoadServices', ['sectorServices', 'underscore'])
+angular.module('trafficLoadServices', ['sectorServices', 'underscore', 'crnaConstants'])
 .factory('singleTrafficLoad', [function() {
   // Constructor
   function SingleTrafficLoad(sector) {
@@ -35,25 +35,60 @@ angular.module('trafficLoadServices', ['sectorServices', 'underscore'])
   return SingleTrafficLoad;
 
 }])
-.factory('myTrafficLoad', ['mySectors', 'singleTrafficLoad', function(mySectors, singleTrafficLoad) {
-  var myLoad = [];
-  
+.factory('distributedTrafficLoad', distributedTrafficLoad)
+.factory('myTrafficLoad', myTrafficLoad);
+
+/*
+ * myTrafficLoad
+ * Get current traffic-load
+ * Get traffic-load distribution
+ */
+myTrafficLoad.$inject = ['mySectors', 'singleTrafficLoad', 'distributedTrafficLoad'];
+function myTrafficLoad(mySectors, singleTrafficLoad, distributedTrafficLoad) {
+  var data = {};
+
   var service = {
-    getLoad: getLoad
+    getLoad: getLoad,
+    getDistribution: getDistribution
   };
 
-  function loadLoad() {
-    myLoad = [];
-    for(var i = 0; i < mySectors.mySectors.length;i++) {
-      myLoad.push(singleTrafficLoad.build({sector: mySectors.mySectors[i]}));
-    }
+  function loadAll() {
+    data.myLoad = singleTrafficLoad.build({sector: mySectors.reduced});
+    data.myDistribution = distributedTrafficLoad.getDistribution({sector: mySectors.reduced});
   }
 
   function getLoad() {
-    return myLoad;
+    return data.myLoad;
   }
 
-  loadLoad();
+  function getDistribution() {
+    return data.myDistribution;
+  }
+
+  loadAll();
 
   return service;
-}]);
+}
+
+/*
+ * distributedTrafficLoad
+ * Get distribution of traffic load on a given group of sectors
+ */
+distributedTrafficLoad.$inject = ['mySectors', 'singleTrafficLoad', 'crnaSectors', '_'];
+function distributedTrafficLoad(mySectors, singleTrafficLoad, crnaSectors) {
+  var service = {
+    getDistribution: getDistribution
+  };
+
+  var distribution = [];
+  function getDistribution(sector) {
+    var childs = _.find(crnaSectors, function(i) { return i.name === sector });
+    if(childs === undefined) {
+      return distribution; // We have an atomic sector, return empty distribution
+    }
+    return distribution;
+  }
+
+  return service;
+
+}
