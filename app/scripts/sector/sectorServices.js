@@ -10,7 +10,7 @@
 
 angular.module('sectorServices', ['mainWebSocket', 'crnaConstants', 'underscore'])
 .factory('mySectors', ['allSectors', 'socket', function(allSectors, socket) {
-  var mySectors = ['UR', 'XR'];
+  var mySectors = ['UN', 'UB', 'KN', 'HN'];
 
   return {
     mySectors: mySectors,
