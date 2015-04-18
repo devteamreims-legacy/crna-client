@@ -34,11 +34,9 @@ angular.module('crnaRoutes', ['ui.router'])
       controller: 'ArcidController',
       controllerAs: 'arcid'
     })
-    .state('arcid2', {
-      url: '/arcid2',
-      templateUrl: 'views/arcid/arcidSearch.html',
-      controller: 'ArcidController',
-      controllerAs: 'arcid'
+    .state('eap', {
+      url: '/eap',
+      templateUrl: 'views/eap/eap.html'
     });
 }]);
 
