@@ -84,6 +84,7 @@ function myTrafficDistributionChartController($scope, myTrafficLoad, _) {
     style: 'expand',
     showControls: false,
     transitionDuration: 300,
+    useInteractiveGuideline: true,
     x: function(d) { return d.when; },
     y: function(d) { return d.total; },
     xAxis: {
