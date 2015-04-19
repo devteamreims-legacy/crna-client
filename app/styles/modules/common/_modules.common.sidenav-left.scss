@@ -9,8 +9,10 @@
   text-align: left;
   font-weight: 500;
   color: inherit;
+  border-radius: 0;
 
   &.active {
+    background-color: $black-4;
     color: $light-blue-500;
   }
 
@@ -23,4 +25,20 @@
   .danger {
     @include danger-color;
   }
+  
+  .label-container {
+    float: right;
+  }
+
+  .label {
+    border-radius: rem(6px);
+    margin: 0 rem(10px);
+    padding: 0 rem(8px);
+    // Button has line-height of 3.6rem, 3rem will do here
+    line-height: 3rem; 
+    text-align: center;
+    background-color: $deep-orange-500;
+    color: $white;
+  }
+
 }
