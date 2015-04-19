@@ -38,10 +38,10 @@ function trafficDistributionChart() {
 }
 
 /* Directive controller dep injection */
-trafficLoadChartController.$inject = ['$scope', '$timeout', 'trafficLoadAndDistribution', '_'];
+trafficLoadChartController.$inject = ['$scope', '$interval', 'trafficLoadAndDistribution', '_'];
 
 /* Directive controller */
-function trafficLoadChartController($scope, $timeout, trafficLoadAndDistribution, _) {
+function trafficLoadChartController($scope, $interval, trafficLoadAndDistribution, _) {
   var vm = this;
   vm.chart = {};
   vm.chart.options = {};
@@ -66,6 +66,7 @@ function trafficLoadChartController($scope, $timeout, trafficLoadAndDistribution
   };
   
   $scope.$watch('sector', function () {
+    /* Cancel refresh timer */
     if(promise !== undefined) {
       $timeout.cancel(promise);
     }
@@ -76,10 +77,9 @@ function trafficLoadChartController($scope, $timeout, trafficLoadAndDistribution
   var promise;
   /* Set a refresh timer */
   function setInterval() {
-    return $timeout(function() {
+    return $interval(function() {
       loadData();
-      promise = setInterval();
-    }, 15000);
+    }, 5*60*1000);
   }
 
   /* Load traffic load */
@@ -90,8 +90,8 @@ function trafficLoadChartController($scope, $timeout, trafficLoadAndDistribution
 }
 
 /* Traffic distribution chart */
-trafficDistributionChartController.$inject = ['$scope', '$timeout', 'trafficLoadAndDistribution', '_'];
-function trafficDistributionChartController($scope, $timeout, trafficLoadAndDistribution, _) {
+trafficDistributionChartController.$inject = ['$scope', '$interval', 'trafficLoadAndDistribution', '_'];
+function trafficDistributionChartController($scope, $interval, trafficLoadAndDistribution, _) {
   var vm = this;
   vm.chart = {};
   vm.chart.options = {};
@@ -122,7 +122,7 @@ function trafficDistributionChartController($scope, $timeout, trafficLoadAndDist
   // Add a scope watch, refresh charts when triggered
   $scope.$watch('sector', function() {
     if(promise !== undefined) {
-      $timeout.cancel(promise);
+      $interval.cancel(promise);
     }
     loadData();
     promise = setInterval();
@@ -130,10 +130,10 @@ function trafficDistributionChartController($scope, $timeout, trafficLoadAndDist
 
   var promise;
   function setInterval() {
-    return $timeout(function() {
+    return $interval(function() {
       loadData();
-      promise = setInterval();
-    }, 15000);
+    }, 5*60*1000);
+    // TODO angular nvd3 has a nasty memory leak bug, we need to clear SVG data at some point
   }
 
   function loadData() {
