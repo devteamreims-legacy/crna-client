@@ -1,0 +1,15 @@
+<div layout="row" layout-align="start center">
+  <h2>EAP Messages</h2>
+  <span flex></span>
+  <div>
+    <select ng-model="filter" aria-label="filter">
+      <option value="">All</option>
+      <option value="stam">STAMs</option>
+      <option value="hotspot">Hotspots</option>
+      <option value="regul">Regulations</option>
+    </select>
+  </div>
+</div>
+<md-list>
+  <eap-message ng-repeat="m in vm.my.messages" message="m"></eap-message>
+</md-list>
