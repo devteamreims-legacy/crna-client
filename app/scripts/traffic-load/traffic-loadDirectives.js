@@ -68,7 +68,7 @@ function trafficLoadChartController($scope, $interval, trafficLoadAndDistributio
   $scope.$watch('sector', function () {
     /* Cancel refresh timer */
     if(promise !== undefined) {
-      $timeout.cancel(promise);
+      $interval.cancel(promise);
     }
     promise = setInterval();
     loadData();
