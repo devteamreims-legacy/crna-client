@@ -103,6 +103,7 @@ angular.module('crnaConstants', [])
 ])
 // Stub arcid point profile
 .constant('arcidPointProfile', [
+  {name: 'AVLON', when: Date.now() - 1000*60*6 - 60*1000, level: 360, trend: ''},
   {name: 'BRY', when: Date.now() - 1000*60*4, level: 360, trend: '-'},
   {name: 'CLM', when: Date.now() - 1000*60*4 + 60*1000, level: 346, trend: '-'},
   {name: 'UTELA', when: Date.now() - 1000*60*4 + 180*1000, level: 340, trend: ''},
