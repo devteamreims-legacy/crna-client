@@ -12,8 +12,9 @@ angular.module('arcidDirectives', ['crnaConstants', 'smart-table', 'arcidService
 .directive('arcidFlightPanel', function() {
   return {
     restrict: 'E',
-    controller: 'ArcidController', 
-    controllerAs: 'x',
-    templateUrl: 'views/arcid/_arcidFlightPanel.html'
+    templateUrl: 'views/arcid/_arcidFlightPanel.html',
+    scope: {
+      flight: '='
+    }
   };
 });
