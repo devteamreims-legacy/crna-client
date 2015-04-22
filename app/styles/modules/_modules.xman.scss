@@ -53,11 +53,16 @@
 
 /* Applied by */
 .xman-row .applied {
+  md-list {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   .md-list-item-text {
     padding-top: 0;
     padding-bottom: 0;
   }
   .applied-by-main {
+    margin: 0;
   }
   .applied-by-meta {
   }
