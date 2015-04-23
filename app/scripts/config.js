@@ -10,7 +10,7 @@
 angular.module('crnaClientApp')
 .config(['$mdThemingProvider', function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
-    .primaryPalette('blue')
+    .primaryPalette('indigo')
     .accentPalette('deep-orange', {
       'default': '500'
     });
