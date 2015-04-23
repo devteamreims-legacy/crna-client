@@ -9,3 +9,4 @@
     * help management
     * prepare core methods to register a module
 * ARCID history (who, when), ARCID autocomplete 
+* Add virtual keyboard
