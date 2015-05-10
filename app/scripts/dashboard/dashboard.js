@@ -7,4 +7,4 @@
  * # arcid module
  * Meta module to include arcid components
  */
-angular.module('dashboard', []);
+angular.module('dashboard', ['dashboardDirectives', 'dashboardControllers']);

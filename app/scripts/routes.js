@@ -15,8 +15,8 @@ angular.module('crnaRoutes', ['ui.router'])
   $stateProvider
     .state('root', {
       url: '/',
-      templateUrl: 'views/sector/mySectorStatus.html',
-      controller: 'MySectorStatusController'
+      templateUrl: 'views/dashboard/dashboard.html',
+      controller: 'DashboardController'
     })
     .state('xman', {
       url: '/xman',
