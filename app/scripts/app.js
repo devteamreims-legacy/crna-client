@@ -25,5 +25,6 @@ angular
     'arcid', // arcid
     'eap', // Extended ATC Planner
     'trafficLoad', // Traffic load
+    'dashboard', // Dashboard stuff
     'commonControllers' // Controllers communs
 ]);
