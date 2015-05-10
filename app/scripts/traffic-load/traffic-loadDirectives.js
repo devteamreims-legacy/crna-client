@@ -9,21 +9,7 @@
  **/
 angular
   .module('trafficLoadDirectives', ['trafficLoadServices', 'nvd3', 'underscore'])
-  .directive('trafficLoadChart', trafficLoadChart)
   .directive('trafficDistributionChart', trafficDistributionChart);
-
-/* Directive */
-function trafficLoadChart() {
-  return {
-    restrict: 'E',
-    controller: trafficLoadChartController,
-    controllerAs: 'vm',
-    scope: {
-      sector: '=',
-    },
-    template: '<nvd3 options="vm.chart.options" data="vm.chart.data"></nvd3>'
-  };
-}
 
 function trafficDistributionChart() {
   return {
@@ -38,57 +24,6 @@ function trafficDistributionChart() {
 }
 
 /* Directive controller dep injection */
-trafficLoadChartController.$inject = ['$scope', '$interval', 'trafficLoadAndDistribution', '_'];
-
-/* Directive controller */
-function trafficLoadChartController($scope, $interval, trafficLoadAndDistribution, _) {
-  var vm = this;
-  vm.chart = {};
-  vm.chart.options = {};
-  vm.chart.options.chart = {
-    type: 'lineChart',
-    height: 400,
-    transitionDuration: 300,
-    useInteractiveGuideline: true,
-    x: function(d) { return d.when; },
-    y: function(d) { return d.total; },
-    refreshDataOnly: true,
-    xAxis: {
-      tickFormat: function(d) {
-        return d3.time.format('%H:%M')(new Date(d));
-      }
-    },
-    yAxis: {
-      tickFormat: function(d) {
-        return d3.format('d')(d);
-      }
-    }
-  };
-  
-  $scope.$watch('sector', function () {
-    /* Cancel refresh timer */
-    if(promise !== undefined) {
-      $interval.cancel(promise);
-    }
-    promise = setInterval();
-    loadData();
-  });
-
-  var promise;
-  /* Set a refresh timer */
-  function setInterval() {
-    return $interval(function() {
-      loadData();
-    }, 5*60*1000);
-  }
-
-  /* Load traffic load */
-  function loadData() {
-    var tl = trafficLoadAndDistribution.getLoad($scope.sector);
-    vm.chart.data = [{key: tl.sector, values: tl.load}];
-  }
-}
-
 /* Traffic distribution chart */
 trafficDistributionChartController.$inject = ['$scope', '$interval', 'trafficLoadAndDistribution', '_'];
 function trafficDistributionChartController($scope, $interval, trafficLoadAndDistribution, _) {
