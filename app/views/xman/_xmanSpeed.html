@@ -1,9 +1,9 @@
 <span class="md-button-group" md-theme="success-warning">
+<md-button ng-disabled="{{(flight.speed === '0')}}" class="md-raised" ng-class="mcsClass(flight)" ng-click="toggleMcs(flight)">
+  <i class="mdi mdi-airplane"></i>
+</md-button>
 <md-button ng-class="buttonClass(flight, s)" class="md-raised" ng-disabled="{{(flight.speed === '0')}}" ng-repeat="s in xmanDefaultSpeeds" ng-click="setSpeed(flight, s)">
   {{s}}
-</md-button>
-<md-button ng-disabled="{{(flight.speed === '0')}}" class="md-raised" ng-class="mcsClass(flight)" ng-click="toggleMcs(flight)">
-  MCS
 </md-button>
 <md-button class="md-raised undo" aria-label="undo" ng-class="{'md-warn': (flight.speed !== '0')}" ng-disabled="{{(flight.speed === '0')}}" ng-click="undoSpeed(flight)" >
   <i class="mdi mdi-undo"></i>
