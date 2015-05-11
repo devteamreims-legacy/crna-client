@@ -25,17 +25,22 @@
       </md-toolbar>
       <md-content flex layout="column" role="navigation">
         <md-button ui-sref-active="md-primary md-focused active" ui-sref='xman'>
-          <i class="warning mdi mdi-alert md-avatar"></i>
           XMAN
+          <span class="label-container" flex>
+            <i class="warning mdi mdi-alert"></i>
+            <span class="label notification-count">2</span>
+          </span>
         </md-button>
         <md-button ui-sref-active="md-primary md-focused active" ui-sref='arcid'>
-          <i class="danger mdi mdi-alert-circle md-avatar"></i>
           ARCID
+          <span class="label-container" flex>
+            <i class="danger mdi mdi-alert-circle"></i>
+          </span>
         </md-button>
         <md-button layout-align="start center" layout="row" ui-sref-active="md-primary md-focused active" ui-sref='eap'>
-          <i class="success mdi mdi-checkbox-marked-circle md-avatar"></i>
           EAP 
           <span class="label-container" flex>
+            <i class="success mdi mdi-checkbox-marked-circle md-avatar"></i>
             <span class="label notification-count">13</span>
           </span>
         </md-button>
