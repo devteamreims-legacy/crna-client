@@ -7,7 +7,7 @@
  * # arcidDirectives
  * Directives for xman
  **/
-angular.module('arcidDirectives', ['crnaConstants', 'smart-table', 'arcidServices'])
+angular.module('arcidDirectives', ['crnaConstants', 'arcidServices'])
 // ARCID Single flight detail panel
 .directive('arcidFlightPanel', function() {
   return {
