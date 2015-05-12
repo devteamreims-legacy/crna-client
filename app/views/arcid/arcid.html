@@ -9,11 +9,11 @@
     <md-progress-linear ng-if="vm.loading" md-mode="indeterminate"></md-progress-linear>
     <md-divider></md-divider>
     <md-content class="arcid-history" ng-if="arcidSearch === ''">
-      <arcid-history loading="vm.loading" selectFlight="vm.showFlight"></arcid-history>
+      <arcid-history loading="vm.loading" select-flight="vm.showFlight"></arcid-history>
     </md-content>
     <md-content class="arcid-search" ng-if="arcidSearch !== ''">
-      <arcid-search loading="vm.loading" selectFlight="vm.showFlight" query="arcidSearch"></arcid-search>
+      <arcid-search loading="vm.loading" select-flight="vm.showFlight" query="arcidSearch"></arcid-search>
     </md-content>
-  <md-content>
-  <arcid-flight-panel flex layout="column" ng-if="arcid.displayedFlight" flight="arcid.displayedFlight"></arcid-flight-panel>
+  </md-content>
+  <arcid-flight-panel flex layout="column" loading="vm.loadingPanel" flight="vm.displayedFlight"></arcid-flight-panel>
 </md-content>

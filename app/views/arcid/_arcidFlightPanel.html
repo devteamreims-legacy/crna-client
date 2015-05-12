@@ -1,13 +1,16 @@
-<md-content id="outer-wrapper"> 
+<md-content ng-if="vm.loading" layout="row" flex layout-align="center center">
+  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</md-content>
+<md-content ng-if="!vm.loading && vm.flight" id="outer-wrapper"> 
   <md-content id="inner-wrapper">
     <md-subheader class="md-primary">
       <div layout="row" class="flight-panel-toolbar">
         <div layout="column" flex="60">
-          <h3 class="callsign">{{flight.callsign}}</h3>
-          <span class="dep-dest">{{flight.departure}} -&gt; {{flight.destination}}</span>
+          <h3 class="callsign">{{vm.flight.callsign}}</h3>
+          <span class="dep-dest">{{vm.flight.departure}} -&gt; {{vm.flight.destination}}</span>
         </div>
         <div layout="row" flex layout-align="end center">
-          <i md-themable class="mdi mdi-database"></i></span>
+          <i class="mdi mdi-database"></i>
           <md-switch ng-model="showChart" aria-label="Show chart">
           </md-switch>
           <i class="mdi mdi-chart-line"></i>
@@ -18,17 +21,17 @@
     <md-content flex class="arcid-profile">
       <table flex class="table table-striped table-hover table-condensed">
         <tbody flex>
-        <tr ng-repeat="pp in flight.pointProfile">
+        <tr ng-repeat="pp in vm.flight.pointProfile">
           <td>{{pp.when | amDateFormat:'HH:mm:ss'}}</td>
           <td>{{pp.name}}</td>
           <td>{{pp.level}}{{pp.trend}}</td>
         </tr>
-        <tr ng-repeat="pp in flight.pointProfile">
+        <tr ng-repeat="pp in vm.flight.pointProfile">
           <td>{{pp.when | amDateFormat:'HH:mm:ss'}}</td>
           <td>{{pp.name}}</td>
           <td>{{pp.level}}{{pp.trend}}</td>
         </tr>
-         <tr ng-repeat="pp in flight.pointProfile">
+         <tr ng-repeat="pp in vm.flight.pointProfile">
           <td>{{pp.when | amDateFormat:'HH:mm:ss'}}</td>
           <td>{{pp.name}}</td>
           <td>{{pp.level}}{{pp.trend}}</td>

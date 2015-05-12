@@ -10,30 +10,52 @@
 
 angular.module('arcidServices', ['crnaConstants', 'underscore'])
 // Single flight with pointprofile
-.factory('arcidFlight', ['arcidPointProfile', function(arcidPointProfile) {
-  // Constructor
-  function ArcidFlight(callsign) {
-    this.callsign = callsign;
-    this.departure = 'EDDM';
-    this.destination = 'EGLL';
-    this.pointProfile = angular.copy(arcidPointProfile); // Initialize point profile with stub data
+.factory('arcidFlight', ['$q', '$timeout', 'arcidPointProfile', 'arcidFlightList', function($q, $timeout, arcidPointProfile, arcidFlightList) {
+  var service = {
+    get: get
+  };
+
+  var localCache = [];
+  var currentRequest;
+  
+  // Returns a promise of a single flight object
+  function get(callsign) {
+    // Cancel previous request
+    if(currentRequest) {
+      $timeout.cancel(currentRequest);
+    }
+    // Search cache first
+    var cached = _.find(localCache, function(c) {
+      return c.callsign === callsign;
+    });
+    if(cached) {
+      var def = $q.defer();
+      def.resolve(cached);
+      return def.promise;
+    }
+    // Nothing in cache, mock a request to the backend
+
+    return $timeout(function() {
+      if(arcidFlightList.indexOf(callsign) === -1) {
+        console.log('Not found!');
+        return {};
+      }
+      var obj = {};
+      obj.callsign = callsign;
+      obj.departure = 'EDDM';
+      obj.destination = 'EGLL';
+      obj.pointProfile = angular.copy(arcidPointProfile);
+      localCache.push(obj);
+      return obj;
+    }, 1500);
   }
 
-  
-  // Static method to call constructor (arcidFlight.build(...))
-  ArcidFlight.build = function(data) {
-    if(data.callsign === undefined || data.callsign.length === 0) {
-      return; // Invalid data passed to the builder
-    }
-    return new ArcidFlight(data.callsign);
-  };
-  
-  return ArcidFlight;
+  return service;
 }])
 // List all arcid flights
 .factory('arcidFlightsAutocomplete', ['$timeout', '_', 'arcidFlightList', function($timeout, _, arcidFlightList) {
   var service = {
-    search: search,  
+    search: search 
   };
 
   var searchCache = [];
@@ -52,6 +74,7 @@ angular.module('arcidServices', ['crnaConstants', 'underscore'])
       }));
       searchCache = _.map(searchCache, function(callsign) {
         return {callsign: callsign, departure: 'EDDM', destination: 'EGKK' };
+      });
 
       console.log('Search loaded with querystring', query);
       return searchCache;
@@ -64,7 +87,7 @@ angular.module('arcidServices', ['crnaConstants', 'underscore'])
 }])
 .factory('arcidFlightsHistory', ['$timeout', 'arcidHistory', 'arcidPointProfile', function($timeout, arcidHistory, arcidPointProfile) {
   var service = {
-    get: get,
+    get: get
   };
 
   var flights = [];

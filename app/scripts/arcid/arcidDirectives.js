@@ -9,17 +9,48 @@
  **/
 angular.module('arcidDirectives', ['angularMoment', 'arcidServices'])
 // ARCID Single flight detail panel
-.directive('arcidFlightPanel', function() {
+.directive('arcidFlightPanel', arcidFlightPanel) 
+.directive('arcidHistory', arcidHistory)
+.directive('arcidSearch', arcidSearch);
+
+/* arcidFlightPanel */
+function arcidFlightPanel() {
   return {
     restrict: 'E',
     templateUrl: 'views/arcid/_arcidFlightPanel.html',
+    controller: arcidFlightPanelController,
+    controllerAs: 'vm',
     scope: {
-      flight: '='
+      flight: '=',
+      loading: '='
     }
   };
-})
-.directive('arcidHistory', arcidHistory)
-.directive('arcidSearch', arcidSearch);
+}
+
+
+arcidFlightPanelController.$inject = ['$scope', 'arcidFlight'];
+function arcidFlightPanelController($scope, arcidFlight) {
+  var vm = this;
+  vm.loading = false;
+  vm.flight = $scope.flight;
+
+  $scope.$watch('flight', function() {
+    // No flight, disable loading circle and that's it
+    vm.flight = $scope.flight;
+    if(!vm.flight) {
+      vm.loading = false;
+      return;
+    }
+    vm.loading = true;
+    arcidFlight.get(vm.flight.callsign)
+    .then(function(flight) {
+      vm.loading = false;
+      vm.flight = flight;
+      console.log(flight);
+    });
+  });
+}
+
 
 /* arcidHistory */
 function arcidHistory() {
@@ -81,6 +112,4 @@ function arcidSearchController($scope, arcidFlightsAutocomplete) {
       vm.flights = flights;
     });
   });
-
-
 }
