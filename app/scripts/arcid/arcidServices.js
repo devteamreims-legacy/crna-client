@@ -50,6 +50,9 @@ angular.module('arcidServices', ['crnaConstants', 'underscore'])
       searchCache = angular.copy(_.filter(arcidFlightList, function(callsign) {
         return callsign.match(RegExp(query, 'i'));
       }));
+      searchCache = _.map(searchCache, function(callsign) {
+        return {callsign: callsign, departure: 'EDDM', destination: 'EGKK' };
+
       console.log('Search loaded with querystring', query);
       return searchCache;
     }, 1500);
