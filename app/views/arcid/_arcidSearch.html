@@ -1,0 +1,10 @@
+<md-content class="arcid-results">
+  <md-list-item class="md-2-line arcid-list-item" ng-click="vm.selectFlight(f)" ng-repeat="f in vm.flights">
+    <div class="md-list-item-text">
+      <h3 md-highlight-text="query" md-highlight-flags="i" class="arcid-search-callsign">{{f}}</h3>
+      <p class="arcid-search-meta">{{f.departure}} - {{f.destination}}</p>
+    </div>
+    <md-divider flex ng-repeat-end></md-divider>
+  </md-list-item>
+</md-content>
+

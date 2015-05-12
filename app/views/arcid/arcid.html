@@ -6,16 +6,14 @@
         <input type="text" ng-model="arcidSearch">
       </md-input-container>
     </div>
+    <md-progress-linear ng-if="vm.loading" md-mode="indeterminate"></md-progress-linear>
     <md-divider></md-divider>
-    <md-content class="arcid-results">
-      <md-list-item class="md-2-line arcid-list-item" ng-click="arcid.showFlight(f)" ng-repeat="f in arcid.flightList|filter:{callsign: arcidSearch}|limitTo: 7">
-        <div class="md-list-item-text">
-          <h3 md-highlight-text="arcidSearch" md-highlight-flags="i" class="arcid-search-callsign">{{f.callsign}}</h3>          
-          <p class="arcid-search-meta">{{f.departure}} - {{f.destination}}</p>
-        </div>
-        <md-divider flex ng-repeat-end></md-divider>
-      </md-list-item>
+    <md-content class="arcid-history" ng-if="arcidSearch === ''">
+      <arcid-history loading="vm.loading" selectFlight="vm.showFlight"></arcid-history>
     </md-content>
-  </md-content>
+    <md-content class="arcid-search" ng-if="arcidSearch !== ''">
+      <arcid-search loading="vm.loading" selectFlight="vm.showFlight" query="arcidSearch"></arcid-search>
+    </md-content>
+  <md-content>
   <arcid-flight-panel flex layout="column" ng-if="arcid.displayedFlight" flight="arcid.displayedFlight"></arcid-flight-panel>
 </md-content>

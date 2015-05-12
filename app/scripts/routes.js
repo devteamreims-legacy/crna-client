@@ -32,7 +32,7 @@ angular.module('crnaRoutes', ['ui.router'])
       url: '/arcid',
       templateUrl: 'views/arcid/arcid.html',
       controller: 'ArcidController',
-      controllerAs: 'arcid'
+      controllerAs: 'vm'
     })
     .state('eap', {
       url: '/eap',

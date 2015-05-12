@@ -31,14 +31,51 @@ angular.module('arcidServices', ['crnaConstants', 'underscore'])
   return ArcidFlight;
 }])
 // List all arcid flights
-.factory('allArcidFlights', ['arcidFlightList', 'arcidFlight', function(arcidFlightList, arcidFlight) {
-  // Constructor
-  function AllArcidFlights() {
-    this.flights = [];
-    for (var i = 0; i < arcidFlightList.length; i++) {
-      this.flights.push(arcidFlight.build({callsign: arcidFlightList[i]}));
-    }
-  }
+.factory('arcidFlightsAutocomplete', ['$timeout', '_', 'arcidFlightList', function($timeout, _, arcidFlightList) {
+  var service = {
+    search: search,  
+  };
 
-  return AllArcidFlights;
+  var searchCache = [];
+  var searchPromise;
+
+  // Takes a query string and returns a promise
+  function search(query) {
+    if(searchPromise) {
+      // Cancel previous promise
+      $timeout.cancel(searchPromise);
+    }
+    searchPromise = $timeout(function() {
+      searchCache = [];
+      searchCache = angular.copy(_.filter(arcidFlightList, function(callsign) {
+        return callsign.match(RegExp(query, 'i'));
+      }));
+      console.log('Search loaded with querystring', query);
+      return searchCache;
+    }, 1500);
+
+    return searchPromise;
+  };
+
+  return service;
+}])
+.factory('arcidFlightsHistory', ['$timeout', 'arcidHistory', 'arcidPointProfile', function($timeout, arcidHistory, arcidPointProfile) {
+  var service = {
+    get: get,
+  };
+
+  var flights = [];
+
+  function get() {
+    return $timeout(function() {
+      flights = [];
+      for(var i = 0; i < arcidHistory.length; i++) {
+        flights.push(arcidHistory[i]);
+      }
+      console.log('History loaded !');
+      return flights;
+    }, 1500);
+  };
+
+  return service;
 }]);

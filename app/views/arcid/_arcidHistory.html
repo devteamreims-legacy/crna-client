@@ -1,0 +1,12 @@
+<md-content class="arcid-results">
+  <md-list-item ng-if="!vm.loading" class="md-2-line arcid-list-item" ng-click="vm.selectFlight(f)" ng-repeat="f in vm.history | orderBy: '-when' ">
+    <div class="md-list-item-text">
+      <h3 class="arcid-search-callsign">{{f.callsign}}</h3>          
+      <p class="arcid-search-meta">{{f.departure}} - {{f.destination}}</p>
+      <p class="who">{{f.who | sectorsToString}}</p>
+      <p class="when" am-time-ago="f.when"></p>
+    </div>
+    <md-divider flex ng-repeat-end></md-divider>
+  </md-list-item>
+</md-content>
+

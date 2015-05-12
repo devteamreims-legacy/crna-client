@@ -7,14 +7,13 @@
  * Arcid Controllers
  */
 angular.module('arcidController', ['crnaConstants', 'arcidDirectives', 'arcidServices', 'underscore'])
-.controller('ArcidController', ['$scope', 'allArcidFlights', '_', function ($scope, allArcidFlights, _) {
-  var arcid = this;
-  arcid.flightList = new allArcidFlights().flights;
-
-  arcid.showFlight = function(f) {
+.controller('ArcidController', ['$scope', 'arcidFlightsAutocomplete', 'arcidFlightsHistory', '_', function ($scope, allArcidFlights, arcidFlightsHistory, _) {
+  var vm = this;
+  vm.loading = true;
+  vm.showFlight = function(f) {
     if(f === undefined) {
       return;
     }
-    arcid.displayedFlight = f;
+    vm.displayedFlight = f;
   };
 }]);

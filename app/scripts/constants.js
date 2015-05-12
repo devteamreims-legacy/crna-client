@@ -101,6 +101,27 @@ angular.module('crnaConstants', [])
   'AFR1018', 'NJE143G', 'BAW633', 'MAJOR', 'HOP542BG', 'BAW555', 'AFR123G', 'MON5434', 'EZY1217', 'AZA212', 'BEL9B',
   'RYR1918', 'BEL511', 'DLH324', 'DLH501', 'DLH506'
 ])
+.constant('arcidHistory', [
+  { 
+    callsign: 'AFR1018',
+    departure: 'EHAM',
+    destination: 'LFBD',
+    who:  ['UR', 'XR'],
+    when: Date.now() - 1000*60*4
+  }, {
+    callsign: 'DLH324',
+    departure: 'EDDM',
+    destination: 'KMIA',
+    who: ['UF', 'KF'],
+    when: Date.now() - 1000*60*2
+  }, {
+    callsign: 'MAJOR',
+    departure: 'LFSB',
+    destination: 'EGKK',
+    who: ['UE', 'XE', 'KE'],
+    when: Date.now() - 1000*60*34
+  }
+])
 // Stub arcid point profile
 .constant('arcidPointProfile', [
   {name: 'AVLON', when: Date.now() - 1000*60*6 - 60*1000, level: 360, trend: ''},
@@ -108,7 +129,9 @@ angular.module('crnaConstants', [])
   {name: 'CLM', when: Date.now() - 1000*60*4 + 60*1000, level: 346, trend: '-'},
   {name: 'UTELA', when: Date.now() - 1000*60*4 + 180*1000, level: 340, trend: ''},
   {name: 'KOPOR', when: Date.now() - 1000*60*4 + 240*1000, level: 340, trend: ''},
-  {name: 'SOMIL', when: Date.now() - 1000*60*4 + 360*1000, level: 340, trend: ''}
+  {name: 'SOMIL', when: Date.now() - 1000*60*4 + 360*1000, level: 340, trend: ''},
+  {name: 'BELDI', when: Date.now() - 1000*60*4 + 400*1000, level: 340, trend: ''},
+  {name: 'KUTEX', when: Date.now() - 1000*60*4 + 444*1000, level: 340, trend: ''}
 ])
 .constant('eapStubMessages', [
   {
