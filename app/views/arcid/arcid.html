@@ -1,13 +1,14 @@
 <md-content class="arcid-main" layout="row" flex layout-fill>
   <md-content flex="40" flex-gt-md="20" class="arcid-leftbar md-whiteframe-z2" ng-init="arcidSearch = ''">
-    <div layout-padding ng-init="arcidSearch = ''">
-      <md-input-container>
+    <div ng-init="arcidSearch = ''">
+      <md-input-container layout-margin>
         <label>Callsign</label>
         <input type="text" ng-model="arcidSearch">
       </md-input-container>
+      <div style="height: 10px;">
+        <md-progress-linear ng-if="vm.loading" md-mode="indeterminate"></md-progress-linear>
+      </div>
     </div>
-    <md-progress-linear ng-if="vm.loading" md-mode="indeterminate"></md-progress-linear>
-    <md-divider></md-divider>
     <md-content class="arcid-history" ng-if="arcidSearch === ''">
       <arcid-history loading="vm.loading" select-flight="vm.showFlight"></arcid-history>
     </md-content>
