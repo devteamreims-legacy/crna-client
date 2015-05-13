@@ -46,7 +46,6 @@ function arcidFlightPanelController($scope, arcidFlight) {
     .then(function(flight) {
       vm.loading = false;
       vm.flight = flight;
-      console.log(flight);
     });
   });
 }
