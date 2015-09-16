@@ -15,14 +15,15 @@ applyTheme.$inject = ['$mdThemingProvider'];
 function applyTheme($mdThemingProvider) {
   // We should define a dark theme here, but this is not working consistently with ngMaterial
   $mdThemingProvider.theme('default')
-//    .dark() // Not working for now
     .primaryPalette('indigo')
     .accentPalette('deep-orange', {
       'default': '500'
-    });
+    })
+    ;
   $mdThemingProvider.theme('success-warning')
     .primaryPalette('green')
     .accentPalette('orange', {
       'default': '800'
-    });
+    })
+    ;
 }
