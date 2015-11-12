@@ -1,3 +1,4 @@
+<md-button class="md-raised md-primary">test</md-button>
 <div layout="row" layout-padding class="xman-row-title">
   <div flex="20" class="callsign">Callsign</div>
   <div flex="10" class="delay">Delay</div>
@@ -5,7 +6,7 @@
   <div flex="25" class="applied">Applied</div>
 </div>
 <md-divider></md-divider>
-<div layout="column" class="xman-row" ng-class="getRowClass(flight)" ng-repeat-start="flight in x.xmanData track by flight.flightId">
+<md-content layout="column" class="xman-row" ng-class="getRowClass(flight)" ng-repeat-start="flight in x.xmanData track by flight.flightId">
   <div layout="row" layout-padding layout-align="start center">
     <div flex="20" layout="column" class="callsign">
       <md-tooltip md-direction="bottom">Optimal : 2 minutes 25 seconds</md-tooltip>
@@ -17,6 +18,6 @@
   </div>
   <md-progress-linear flex ng-if="!flight.applied.when && (flight.speed !== '0')" class="md-primary" md-mode="determinate" ng-value="80">
   </md-progress-linear>
-</div>
+</md-content>
 <md-divider ng-repeat-end></md-divider>
 

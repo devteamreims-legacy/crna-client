@@ -23,19 +23,19 @@
 }
 
 .xman-row.speed-applied {
-  @include success-background-color;
+  @include success-background-color(dark);
 }
 
 .xman-row.speed-not-applied {
-  @include danger-background-color;
+  @include danger-background-color(dark);
 }
 
 .xman-row.correct-speed-applied {
-  @include success-background-color;
+  @include success-background-color(dark);
 }
 
 .xman-row.no-speed-to-apply {
-  @include success-background-color;
+  @include success-background-color(dark);
 }
 
 /* Delay */

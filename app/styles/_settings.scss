@@ -27,7 +27,7 @@ $fourme-accent-color: $deep-orange-500;
   @if $type == light {
     background-color: $green-100;
   } @else {
-    background-color: $green-500;
+    background-color: $green-900;
   }
 }
 
@@ -35,7 +35,7 @@ $fourme-accent-color: $deep-orange-500;
   @if $type == light {
     background-color: $orange-100;
   } @else {
-    background-color: $orange-500;
+    background-color: $orange-900;
   }
 }
 
@@ -44,7 +44,7 @@ $fourme-accent-color: $deep-orange-500;
   @if $type == light {
     background-color: $red-100;
   } @else {
-    background-color: $red-500;
+    background-color: $red-900;
   }
 }
 
