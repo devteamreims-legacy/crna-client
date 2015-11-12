@@ -3,6 +3,7 @@
   @include transition(background-color 0.5s $ease-out-cubic, color 0.5s $ease-out-cubic);
   margin: 0;
   min-width: 0;
+
   
   &:first-of-type {
     @include border-left-radius(rem(2px));
@@ -23,19 +24,19 @@
 }
 
 .xman-row.speed-applied {
-  @include success-background-color(dark);
+  @include success-background-color(light);
 }
 
 .xman-row.speed-not-applied {
-  @include danger-background-color(dark);
+  @include danger-background-color(light);
 }
 
 .xman-row.correct-speed-applied {
-  @include success-background-color(dark);
+  @include success-background-color(light);
 }
 
 .xman-row.no-speed-to-apply {
-  @include success-background-color(dark);
+  @include success-background-color(light);
 }
 
 /* Delay */

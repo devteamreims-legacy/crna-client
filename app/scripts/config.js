@@ -19,13 +19,11 @@ function applyTheme($mdThemingProvider) {
     .accentPalette('deep-orange', {
       'default': '500'
     })
-    .dark()
     ;
   $mdThemingProvider.theme('success-warning')
     .primaryPalette('green')
     .accentPalette('orange', {
       'default': '800'
     })
-    .dark()
     ;
 }
