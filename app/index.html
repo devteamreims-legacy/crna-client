@@ -18,37 +18,9 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body layout="row" layout-fill ng-app="crnaClientApp">
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
-      <md-toolbar layout="row" layout-padding>
+  <body layout="column" layout-fill ng-app="crnaClientApp">
+    <md-toolbar layout="row" layout-padding>
         <h1 class="md-toolbar-tools"><a ui-sref='root' crna-sector-position></a></h1>
-      </md-toolbar>
-      <md-content flex layout="column" role="navigation">
-        <md-button ui-sref-active="md-primary md-focused active" ui-sref='xman'>
-          XMAN
-          <span class="label-container" flex>
-            <i class="warning mdi mdi-alert"></i>
-            <span class="label notification-count">2</span>
-          </span>
-        </md-button>
-        <md-button ui-sref-active="md-primary md-focused active" ui-sref='arcid'>
-          ARCID
-          <span class="label-container" flex>
-            <i class="danger mdi mdi-alert-circle"></i>
-          </span>
-        </md-button>
-        <md-button layout-align="start center" layout="row" ui-sref-active="md-primary md-focused active" ui-sref='eap'>
-          EAP 
-          <span class="label-container" flex>
-            <i class="success mdi mdi-checkbox-marked-circle md-avatar"></i>
-            <span class="label notification-count">13</span>
-          </span>
-        </md-button>
-      </md-content>
-    </md-sidenav>
-
-    <div layout="column" layout-fill tabIndex="-1" role="main" flex>
-      <md-toolbar layout="row" layout-padding>
         <md-button class="md-icon-button" hide-gt-sm aria-label="Toggle Menu">
           <i class="mdi mdi-menu"></i>
         </md-button>
@@ -62,10 +34,34 @@
             <crna-reload-app><md-button aria-label="Reload app" class="md-icon-button"><i class="mdi mdi-refresh"></i></md-button></crna-reload-app>
           </div>
         </div>
-      </md-toolbar>
-      <md-content ui-view layout-fill flex></md-content>
-
-    </div>
+    </md-toolbar>
+    <section layout="row" flex>
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+          <md-content flex layout="column" role="navigation">
+            <md-button ui-sref-active="md-primary md-focused active" ui-sref='xman'>
+              XMAN
+              <span class="label-container" flex>
+                <i class="warning mdi mdi-alert"></i>
+                <span class="label notification-count">2</span>
+              </span>
+            </md-button>
+            <md-button ui-sref-active="md-primary md-focused active" ui-sref='arcid'>
+              ARCID
+              <span class="label-container" flex>
+                <i class="danger mdi mdi-alert-circle"></i>
+              </span>
+            </md-button>
+            <md-button layout-align="start center" layout="row" ui-sref-active="md-primary md-focused active" ui-sref='eap'>
+              EAP 
+              <span class="label-container" flex>
+                <i class="success mdi mdi-checkbox-marked-circle md-avatar"></i>
+                <span class="label notification-count">13</span>
+              </span>
+            </md-button>
+          </md-content>
+        </md-sidenav>
+        <md-content flex layout="column" role="main" ui-view></md-content>
+    </section>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
